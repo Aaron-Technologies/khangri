@@ -1,0 +1,441 @@
+@import 'custom';
+$custom-blue-light95: mix(white, $custom-blue, 95%);
+$custom-blue-light80: mix(white, $custom-blue, 80%);
+$custom-blue-light70: lighten($custom-blue, 70%);
+$custom-blue-light60: lighten($custom-blue, 60%);
+$custom-blue-light50: lighten($custom-blue, 50%);
+
+// ********************************************admin changes *************************************
+.mw-100{
+    min-width: 100px !important;
+}
+.mw-150{
+    min-width: 150px !important;
+}
+.mw-200{
+    min-width: 200px !important;
+}
+.mw-250{
+    min-width: 250px !important;
+}
+.mw-300{
+    min-width: 300px !important;
+}
+.mw-350{
+    min-width: 350px !important;
+}
+.mw-400{
+    min-width: 400px !important;
+}
+.mw-450{
+    min-width: 450px !important;
+}
+.mw-500{
+    min-width: 500px !important;
+}
+
+.scroll-box {
+            overflow: auto;
+            user-select: none;
+            cursor: url('https://i.imgur.com/4NZ6uLY.png'), grab; /* custom hand */
+}
+
+.scroll-box:active {
+            cursor: url('https://i.imgur.com/4NZ6uLY.png'), grabbing; /* custom grabbing hand */
+}
+
+select.form-control{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background: url("data:image/svg+xml;utf8,<svg fill='%23333' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") 
+    no-repeat right 10px center;
+    background-color: #fff; /* or inherit */
+    background-size: 26px;
+    padding-right: 35px; /* space for arrow */
+    cursor: pointer;
+
+    /* When focused (simulate open → arrow up) */
+    &:focus {
+        background: url("data:image/svg+xml;utf8,<svg fill='%23333' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 14l5-5 5 5z'/></svg>") 
+        no-repeat right 10px center;
+        background-color: #fff;
+        background-size: 26px;
+        padding-right: 35px;
+    }
+}
+
+
+.field-validation-error {
+    font-size: 14px;
+    line-height: 16px !important;
+    font-style: italic;
+    display: block;
+    color: red;
+    font-weight: 500;
+}
+
+.dashboard-main-content.t{
+    transform: scale(0.90);
+}
+  
+.list-items.t {
+    list-style-type: none !important;
+}
+.sidebar-menu.t{
+    li.dashboard{
+        a{
+            color: $custom-blue !important;
+            font-size: 20px;
+            font-weight: 500;
+            i {
+                color: $custom-blue !important;
+             }
+
+             &:hover{
+                background: none !important;
+             }
+        }
+
+        &.active{
+            a{
+                background-color: transparent !important;
+            }
+        }
+    }
+
+    li:hover {
+        & > a {
+        background-color: #ededed !important;
+        color: black !important;
+        }
+
+        ul li {
+            i,span {
+            color: black !important;
+            }
+        }
+        
+    } 
+
+    li.active:hover {
+        & > a {
+        background-color: $custom-blue !important;
+        color: #fff !important;
+        }
+
+        i,span {
+            color: #fff !important;
+        }
+    }
+     
+    
+    .m_menu{
+        .la-minus{
+                display: none;
+        }
+
+        &.active{
+                .la-minus{
+                    display: block;
+                }
+                .la-plus{
+                    display: none;
+                }
+        }
+    }
+
+    .dropdown-menu-item {
+        padding-left: 20px;
+
+        .toggle-drop-menu {
+            padding-left: 20px;
+            background-color: transparent;
+        }
+
+        .side-menu-icon{
+            color: $custom-blue;
+        }
+    }
+    .dropdown-menu-item li > a{
+        font-size: 13px !important;
+        background-color: rgba(40, 125, 250, 0.1);
+    }
+
+    .dropdown-menu-item li {
+        .toggle-menu-icon{
+            .la {
+                transform: rotate(0deg);
+            }
+        }
+
+        &.active{
+            .toggle-menu-icon .la {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    .dropdown-menu-item li{
+        span, a{
+            color: $custom-blue;
+        }
+    } 
+
+    
+
+    li{
+        a{
+            // i{
+            //     position: absolute;
+            //     left: 0;
+            // }
+
+            // padding-left: 30px !important;
+
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+}
+
+
+
+
+.form-control {
+    border-color: rgba(128, 137, 150, .7) !important;
+}
+span.inr-symbol{
+    line-height: 18px;
+}
+.user-pro-img {
+    width: 100px;
+    height: 100px;
+    img{
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+.file-upload-wrap .file-upload-text {
+    height: 50px;
+}
+.form-control.imgName{
+    margin-top: -28px;
+    padding: 0 10px;
+    border: none;
+}
+.previewContainer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    height: 100%;
+    img{
+        // background: white !important;
+    }
+}
+
+.user-pro-img img{
+    filter: grayscale(100%);
+}
+
+#previewimage {
+    display: block;
+    filter: grayscale(0%);
+    &::after{
+        // content: '';
+        // position: absolute;
+        // top: 0;
+        // left: 0;
+        // width: 100%;
+        // height: 100%;
+        // background: rgba(255, 255, 255, 1); 
+        // z-index: -1; 
+        // pointer-events: none; 
+    }
+}
+
+#close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    display: none; /* Initially hidden */
+}
+
+.action-btns .theme-btn:nth-child(1) {
+    background-color: $custom-blue;
+    color: #fff;
+}
+
+.ui-datepicker{
+    .ui-datepicker-calendar{
+        background: white !important;
+    }
+    .ui-state-default{
+        text-align: center !important;
+        background-color: $custom-blue-light80;
+    }
+    .ui-state-active{
+        border: 3px solid $custom-blue !important;
+        background: $custom-blue-light60 !important;
+        color: $custom-blue !important;
+    }
+    .ui-state-hover{
+        background-color: $custom-blue-light95;
+    }
+    .ui-state-highlight{
+        background: $custom-blue !important;
+        color: white !important;
+    }
+    .ui-widget-header {
+        border: 1px solid $custom-blue !important;
+        background: $custom-blue !important;
+        color: white;
+    }
+
+    .ui-datepicker-prev{
+        &.ui-state-hover{
+            span::before {
+                color: black !important;
+            }
+        }
+        span::before {
+            content: "←";
+            font-size: 18px;
+            color: #ffffff;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 30px;
+            overflow: visible;
+            text-indent: initial;
+        }    
+    }
+
+    .ui-datepicker-next {
+        &.ui-state-hover{
+            span::before {
+                color: black !important;
+            }
+        }
+        span::before {
+            content: "→";
+            font-size: 18px;
+            color: #ffffff;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            width: 30px;
+            overflow: visible;
+            text-indent: initial;
+        }
+    }
+}
+
+/* Ensure spinners are always visible */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+  -webkit-appearance: auto;
+  display: inline-block;
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Show spinners in Firefox */
+}
+
+input[type=number] {
+  -moz-appearance: textfield; /* Ensures spinners are shown in Firefox */
+}
+
+// ********************************************admin changes *************************************
+
+
+
+
+
+// custom check box 
+.customChekbox.admin{
+
+    box-shadow: none;
+    padding: 0px;
+
+    .form-check{
+        padding-left: 0px;
+    }
+
+    input[type=checkbox] + label {
+        display: block;
+        margin: 0.2em;
+        cursor: pointer;
+        font-size: 15px;
+        padding-left: 30px;
+        position: relative;
+        line-height: 18px;
+  }
+    input[type=checkbox] {
+        display: none;
+    }
+    input[type=checkbox] + label:before {
+        content: "✔";
+        border: 0.1em solid #000;
+        border-radius: 0.2em;
+        display: inline-block;
+        margin-right: 0.2em;
+        vertical-align: middle;
+        color: transparent;
+        transition: 0.2s;
+        font-size: 14px;
+        line-height: 19px;
+        height: 20px;
+        width: 20px;
+        padding: 0px 4px;
+    
+        position: absolute;
+        left: 0;
+    }
+
+    input[type=checkbox] + label:active:before {
+        transform: scale(0);
+    }
+    input[type=checkbox]:checked + label:before {
+        background-color: $custom-blue;
+        border-color: $custom-blue;
+        color: #fff;
+    }
+    &.sub{
+        input[type=checkbox]:checked + label:before {
+            background-color: $custom-blue-light50;
+            border-color: $custom-blue-light50;
+        } 
+        .cost {
+            font-weight: normal;
+        }
+    }
+    input[type=checkbox]:disabled + label:before {
+        transform: scale(1);
+        border-color: #aaa;
+    }
+    input[type=checkbox]:checked:disabled + label:before {
+        transform: scale(1);
+        background-color: $custom-blue;
+        border-color: $custom-blue;
+    }
+    .cost {
+        color: $custom-blue;
+        top: 33px;
+        font-weight: bold;
+    }
+}
