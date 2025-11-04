@@ -363,3 +363,16 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Khangri.UI/obj/Debug/net8.0/Khangri.UI.AssemblyInfo.cs
+/Khangri.UI/obj/Debug/net8.0/Khangri.UI.AssemblyInfoInputs.cache
+/Khangri.UI/obj/Debug/net8.0/Khangri.UI.assets.cache
+/Khangri.UI/obj/Debug/net8.0/Khangri.UI.GeneratedMSBuildEditorConfig.editorconfig
+/Khangri.UI/obj/Khangri.UI.csproj.nuget.dgspec.json
+/Khangri.UI/obj/Khangri.UI.csproj.nuget.g.targets
+/Khangri.UI/obj/project.assets.json
+/Khangri.UI/obj/project.nuget.cache
+/.vs/Khangri/CopilotIndices/0.2.1648.49400/CodeChunks.db
+/.vs/Khangri/CopilotIndices/0.2.1648.49400/SemanticSymbols.db
+/.vs/Khangri/CopilotIndices/0.2.1648.49400/SemanticSymbols.db-shm
+/.vs/Khangri/CopilotIndices/0.2.1648.49400/SemanticSymbols.db-wal
+/.vs/Khangri/v17/.suo
