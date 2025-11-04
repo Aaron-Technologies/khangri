@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Khangri.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+168a539b5bf5407fbbf3916aecacd6177f7afe5d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58d49047890f6acdc7c97fa35304cae9e490be53")]
 [assembly: System.Reflection.AssemblyProductAttribute("Khangri.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Khangri.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
