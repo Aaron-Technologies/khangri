@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\shiba\\source\\repos\\Khangri\\Khangri.UI\\Khangri.UI.csproj": {}
+    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\shiba\\source\\repos\\Khangri\\Khangri.UI\\Khangri.UI.csproj": {
+    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\shiba\\source\\repos\\Khangri\\Khangri.UI\\Khangri.UI.csproj",
+        "projectUniqueName": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj",
         "projectName": "Khangri.UI",
-        "projectPath": "C:\\Users\\shiba\\source\\repos\\Khangri\\Khangri.UI\\Khangri.UI.csproj",
-        "packagesPath": "C:\\Users\\shiba\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\shiba\\source\\repos\\Khangri\\Khangri.UI\\obj\\",
+        "projectPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shiba\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
