@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj": {}
+    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\khangri.ui\\Khangri.UI.csproj": {}
   },
   "projects": {
-    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj": {
+    "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\khangri.ui\\Khangri.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj",
+        "projectUniqueName": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\khangri.ui\\Khangri.UI.csproj",
         "projectName": "Khangri.UI",
-        "projectPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\Khangri.UI.csproj",
+        "projectPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\khangri.ui\\Khangri.UI.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\Khangri.UI\\obj\\",
+        "outputPath": "F:\\ROYAL SIKKIM\\Travel Agency All CLIENT\\khangri DOTNET\\khangri.ui\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"
