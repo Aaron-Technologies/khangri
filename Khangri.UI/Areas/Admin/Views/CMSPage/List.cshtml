@@ -1,0 +1,68 @@
+﻿@using Khangri.Entities
+@model List<EntityCMSPage>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "CMSPage";
+}
+
+<!--<div class="box">-->
+    <div class="box box-default">
+    <div class="box-header with-border">
+            <h4 class="card-title">CMSPage</h4>
+            <a href="@Url.Action("add","CMSPage")" class="btn btn-primary btn-lg float-right">Add New</a>
+        </div>
+
+        <div class="box-body">
+            <div class="table-responsive">
+                <table id="tbl_CMSPage" class="table table-bordered table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th class="fw-bold">Title</th>
+                            <th class="fw-bold">Status</th>
+                            <th class="fw-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var entity in Model)
+                        {
+                            <tr role="row">
+                                <td class="align-middle">
+                                    @entity.Title
+                                </td>
+                                <td class="align-middle">
+                                   @if(entity.IsActive)
+                                    {
+                                        <span class="badge light badge-success p-5">Active</span>
+
+                                    }
+                                    else
+                                    {
+                                        <span class="badge light badge-danger p-5">Inactive</span>
+                                    }
+                                </td>
+
+                                <td class="align-middle">
+                                    <div class="d-flex">
+                                        <a href="@Url.Action("edit","CMSPage",new {pageId = entity.CMSPageId})" class="btn btn-primary btn-sm"><i class="fa  fa-pencil-square fa-2x"></i></a>
+                                        @* <button data-deleteurl="@Url.Action("delete","ShipType",new {ShipTypeId = ship.ShipTypeId})" class="btn btn-danger shadow btn-xs sharp btn-delete"><i class="fas fa-trash-alt"></i></button>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<!--</div>-->
+
+@section Scripts {
+    <script src="~/Admin/assets/vendor_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tbl_CMSPage').DataTable({
+                pageLength: 10
+            });
+        });
+    </script>
+}

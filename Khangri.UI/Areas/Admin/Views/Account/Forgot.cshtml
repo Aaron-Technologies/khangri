@@ -1,0 +1,65 @@
+﻿@using Khangri.UI.Models
+@model ResetPasswordInitiativeRequestViewModel
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewData["Title"] = "Forgot Password";
+}
+<section class="py-4 bg-white" style="width: 290px; ">
+    <div class="colored-border"></div>
+    <div id="full-page-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+                    
+                    <div class="full-page-title">
+                        <div class="text-center">
+                           <a href=""><img src="~/images/custom/logo/logo.jpg" alt="Company Logo" width="100"></a> 
+                        </div>
+                    </div><!-- end full-page-title -->
+
+                    <div class="custom-form custom-form-fields">
+                        <div>
+                                <h3 class="fw-bold">Forgot Password ?</h3>
+
+                                @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                {
+                                    <div class="input-group mb-2">
+                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        @Html.TextBoxFor(m=>m.LoginName,null,new{@class="form-control", placeholder="ex@example.com"})
+                                        @Html.ValidationMessageFor(m=>m.LoginName,null,new{@class="field-validation-valid text-danger"})
+                                    </div>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-orange btn-block btn-flat margin-top-10" id="btnSubmit">SUBMIT</button>
+                                    </div>
+                                    <div class="text-center text-danger">
+                                        @if (!String.IsNullOrWhiteSpace(Convert.ToString(ViewBag.ErrorMessage)))
+                                        {
+                                            <span>@Convert.ToString(ViewBag.ErrorMessage)</span>
+                                        }
+                                    </div>
+
+                                    <div class="text-center text-white">
+                                        @if (!String.IsNullOrWhiteSpace(Convert.ToString(ViewBag.SuccessMessage)))
+                                        {
+                                            <span>@Convert.ToString(ViewBag.SuccessMessage)</span>
+                                        }
+                                    </div>
+                                }
+                        </div>
+                    </div><!-- end custom-form -->
+
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end full-page-form -->
+    <div class="colored-border"></div>
+</section>
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('form').on('submit', function () {
+                $('#btnSubmit').attr('disabled', 'disabled');
+            });
+        });
+    </script>
+}

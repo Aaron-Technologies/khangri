@@ -1,0 +1,133 @@
+﻿@using Khangri.Entities;
+@model EntityTourImage;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Add New TourImage";
+}
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Add Tour Image</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Tour<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+
+                                @Html.DropDownListFor(m=>m.TourId, (ViewBag.AllTour as IEnumerable<SelectListItem>), new {@class="default-select size-1 form-control wide mb-3"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Image<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+
+                                @Html.DropDownListFor(m=>m.ImageId, (ViewBag.allImages as IEnumerable<SelectListItem>), new {@class="default-select size-1 form-control wide mb-3",id="setImage"})
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Caption<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.Caption, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.Caption,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Active:</span>
+                                <span class="text-danger">*</span>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="checkbox custom-checkbox mb-3 checkbox-success check-lg">
+                                    @Html.CheckBoxFor(m => m.IsActive, new {@class="filled-in chk-col-green", id="chkActive"})
+                                    <label class="form-check-label" for="chkActive"></label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp<a href="@Url.Action("list","TourImage")" class="btn btn-success">Cancel</a>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+                <div class="col-sm-6">
+                    <img src="~/images/no-image.jpg" id="previewimage" height="200" width="150" />
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+         var imageUrl = '@Url.Action("image","TourImage",new {imageId = "__ImageId"})'
+        $(document).ready(function () {
+            $('#setImage').on('change', function () {
+                if ($(this).val() != '') {
+                    var imageId = $.trim($(this).val())
+                    var newImageUrl=imageUrl.replace('__ImageId',imageId);
+                    $('#previewimage').attr('src',newImageUrl);
+
+                }
+            });
+
+
+        @{
+            var json = ViewBag.Status?.ToString();
+            if (!String.IsNullOrWhiteSpace(json))
+            {
+                json = HttpUtility.JavaScriptStringEncode(json);
+            }
+        }
+
+                                                    var msg = '@Html.Raw(json)';
+            if (msg != null && msg != undefined && $.trim(msg) != '') {
+                var data = JSON.parse(msg);
+                if (data.Status == 'Failed') {
+                    swal({
+                        title: data.Title,
+                        text: data.Description,
+                        type: "error",
+                        button: "Ok",
+                    });
+                } else if (data.Status == 'Success') {
+                    swal({
+                            title: data.Title,
+                            text: data.Description,
+                            type: "success",
+                            button: "Ok",
+                        }, function(){
+                            var url = $.trim('@Url.Action("list","TourImage")');
+                            window.location.href = url;
+                    });
+                }
+            }
+        });
+    </script>
+}
