@@ -1,0 +1,300 @@
+﻿@using Khangri.UI.Models
+@model LocationDetailsViewModel
+
+<!--================== PAGE-COVER ===============-->
+<section class="page-cover head_cover" id="cover-travel-guide">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">@Model.Location.Location</h1>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("index","Home")">Home</a></li>
+                    <li class="breadcrumb-item"> / @Model.Location.Location</li>
+                </ul>
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end page-cover -->
+<!--===== INNERPAGE-WRAPPER ====-->
+<section class="innerpage-wrapper">
+    <div id="travel-guide" class="innerpage-section-padding">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-9 col-xl-9 content-side">
+                    <div class="detail-tabs">
+                        <ul class="nav nav-tabs nav-justified ">
+                            <li class="nav-item"><a class="nav-link active" href="#tv-guide-overview" data-bs-toggle="tab">Overview</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tv-guide-attractions" data-bs-toggle="tab">Attractions</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tv-guide-hotels" data-bs-toggle="tab">Weather & Location</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tv-guide-gym" data-bs-toggle="tab">Gallery</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#tv-guide-sports" data-bs-toggle="tab">TripAdvisor</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div id="tv-guide-overview" class="tab-pane in active">
+                                <img src="@Url.Action("image","Location",new{locationId=Model.Location.LocationId})" class="img-fluid w-100" alt="tour-guide-img" />
+
+                                <div class="tab-text">
+                                    <h3>@Model.Location.Location Overview</h3>
+                                    <p class="text-justify">
+                                       @Model.Location.Description
+                                    </p>
+                                </div><!-- end tab-text -->
+                            </div><!-- end tv-guide-overview -->
+
+                            <div id="tv-guide-attractions" class="tab-pane">
+                                <div class="row">
+                                    <div class="owl-carousel owl-theme" id="owl-attractions">
+                                        @{
+                                            
+                                            foreach (var item in Model.SightSeeing.OrderBy(si=>si.SightSeeing))
+                                            {
+                                                <div class="col-12">
+                                                    <div class="item text-center">
+                                                        <a href="#">
+                                                            <img src="@Url.Action("Image","SightSeeing",new{imageId=item.SightSeeingId})" class="img-fluid"
+                                                             alt="attraction-img" />
+                                                        </a>
+                                                        <div class="tab-text">
+                                                            <a href="#">
+                                                                <h3>@item.SightSeeing:</h3>
+                                                            </a>
+                                                            <p class="attract-loc"><span><i class="fa fa-map-marker"></i></span>@item.Altitude</p>
+                                                            <p>
+                                                                @item.Details
+                                                            </p>
+                                                        </div><!-- end tab-text -->
+                                                    </div><!-- end item -->
+                                                </div>
+                                            }
+                                        }
+                                        
+                                        <!-- end columns -->
+
+                                        
+                                        
+                                        
+                                        
+                                    </div><!-- end owl-attractions -->
+                                </div><!-- end row -->
+                            </div><!-- end tv-guide-attractions -->
+
+                            <div id="tv-guide-hotels" class="tab-pane">
+                                <div class="list-block main-block h-list-block mb-2">
+                                    <a class="weatherwidget-io" href="@Model.Location.WeatherUrl" data-label_1="@Model.Location.Location.ToUpper()" data-label_2="WEATHER" data-theme="original">@Model.Location.Location.ToUpper()</a>
+                                    <script>
+                                        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+                                    </script>
+                                </div><!-- end h-list-block -->
+                                <h3>Location</h3>
+                                <div class="list-block main-block h-list-block">
+                                    <iframe src="@Model.Location.GoogleMapUrl" allowfullscreen style="width: 100%; height: 250px;"></iframe>
+                                </div><!-- end h-list-block -->
+                            </div><!-- end tv-guide-hotels -->
+
+                            <div id="tv-guide-gym" class="tab-pane">
+                                <div class="tv-guide-block" id="gallery-page">
+                                    <div class="row">
+                                        @{
+                                            foreach(var item in Model.Image)
+                                            {
+                                                <div class="gallery-product col-12 col-md-6 col-lg-4 col-xl-4">
+                                                    <div class="gallery-block">
+                                                        <div class="gallery-img ">
+                                                            <img src="@Url.Action("image","Image",new{imageId=item.ImageId})" class="img-fluid" alt="gallery-img">
+                                                            <div class="gallery-mask">
+
+                                                                <a href="@Url.Action("image","Image",new{imageId=item.ImageId})" title="image-1" class="with-caption image-link"><span><i class="fa fa-arrows-v"></i></span></a>
+                                                            </div><!-- end gallery-mask -->
+                                                        </div><!-- end gallery-img -->
+                                                    </div><!-- end gallery-block -->
+                                                </div>
+
+                                                <!-- end gallery-product -->
+                                            }
+                                        }
+
+                                       
+
+                                    </div><!-- end row -->
+                                </div><!-- end tv-guide-block -->
+
+
+                            </div><!-- end tv-guide-gym -->
+
+                            <div id="tv-guide-sports" class="tab-pane">
+                                <div class="tv-guide-block">
+                                    <iframe src="@Model.Location.TripAdvisorUrl" frameborder="0" allowfullscreen style="width: 100%; height: 350px;"></iframe>
+                                </div><!-- end tv-guide-block -->
+                            </div><!-- end tv-guide-sports -->
+
+                        </div><!-- end tab-content -->
+                    </div><!-- end detail-tabs -->
+                </div><!-- end columns -->
+
+                <div class="col-12 col-md-12 col-lg-3 side-bar right-side-bar">
+                    <div class="side-bar-block booking-form-block">
+                        <div class="booking-form">
+                            <h3>Book Packages</h3>
+                            <p>Find your dream Sikkim guide</p>
+
+                           <form id="tour_frm_booking" name="tour_frm_booking" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" id="txt_first_name" name="txt_first_name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name" id="txt_last_name" name="txt_last_name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" id="txt_email" name="txt_email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone" id="txt_phone" name="txt_phone" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Country" id="txt_country" name="txt_country" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control dpd3" placeholder="Booking Date" id="txt_booking_date" name="txt_booking_date" />
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-12 col-xl-6 no-sp-r">
+                                        <div class="form-group right-icon">
+                                            <select class="form-control" id="txt_adults" name="txt_adults">
+                                                <option selected value="">Adults</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-12 col-xl-6 no-sp-l">
+                                        <div class="form-group right-icon">
+                                            <select class="form-control" id="txt_children" name="txt_children">
+                                                <option selected value="">Children</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*<div class="form-group right-icon">
+                                    <select class="form-control" id="txt_pay_method" name="txt_pay_method">
+                                        <option selected value="">Payment Method</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                        <option value="Paypal">Paypal</option>
+                                    </select>
+                                    <i class="fa fa-angle-down"></i>
+                                </div>*@
+
+                                <div class="checkbox custom-check">
+                                    <input type="checkbox" id="check01" name="checkbox" />
+                                    <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="@Url.Action("TermsCondition","Home")">Terms & Condition</a></label>
+                                </div>
+                                <div class="col-md-12 text-center" id="result_msg"></div>
+                                <button class="btn btn-block btn-orange w-100" type="submit" id="btnBookingSubmit" name="submit">Send Enquiry</button>
+                            </form>
+
+                        </div><!-- end booking-form -->
+                    </div><!-- end side-bar-block -->
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="side-bar-block main-block ad-block">
+                                <div class="main-img ad-img">
+                                    <a href="#">
+                                        <img src="~/images/car-ad.jpg" class="img-fluid" alt="car-ad" />
+                                        <div class="ad-mask">
+                                            <div class="ad-text">
+                                                <span>Luxury</span>
+                                                <h2>Car</h2>
+                                                <span>Offer</span>
+                                            </div><!-- end ad-text -->
+                                        </div><!-- end columns -->
+                                    </a>
+                                </div><!-- end ad-img -->
+                            </div><!-- end side-bar-block -->
+                        </div><!-- end columns -->
+
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="side-bar-block support-block">
+                                <h3>Need Help</h3>
+                                <p class="text-justify">
+                                    Our dedicated customer support team is here 24/7 to assist you. From itinerary changes to travel tips, we're just a
+                                    call away, ensuring your journey is smooth and worry-free.
+                                </p>
+                                <div class="support-contact">
+                                    <p class="list-inline-item">
+                                        <span><i class="fa fa-phone"></i></span>
+                                        @{
+                                            foreach (var item in Model.Contacts.Where(s => s.IsActive).Take(2))
+                                            {
+                                                <a class="text-muted" href="tel:@item.Phone" target="_blank">@item.Phone</a>
+
+                                            }
+                                        }
+                                    </p>
+                                </div><!-- end support-contact -->
+                            </div><!-- end side-bar-block -->
+                        </div><!-- end columns -->
+
+                    </div><!-- end row -->
+                </div><!-- end columns -->
+
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end travel-guide -->
+</section><!-- end innerpage-wrapper -->
+<!--======================= BEST FEATURES =====================-->
+<section id="best-features" class="banner-padding black-features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="b-feature-block">
+                    <span><i class="fa fa-inr"></i></span>
+                    <h3>Best Price Guarantee</h3>
+                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                </div><!-- end b-feature-block -->
+            </div><!-- end columns -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="b-feature-block">
+                    <span><i class="fa fa-lock"></i></span>
+                    <h3>Safe and Secure</h3>
+                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                </div><!-- end b-feature-block -->
+            </div><!-- end columns -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="b-feature-block">
+                    <span><i class="fa fa-thumbs-up"></i></span>
+                    <h3>Best Travel Agents</h3>
+                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                </div><!-- end b-feature-block -->
+            </div><!-- end columns -->
+
+            <div class="col-md-6 col-lg-3">
+                <div class="b-feature-block">
+                    <span><i class="fa fa-bars"></i></span>
+                    <h3>Travel Guidelines</h3>
+                    <p>Lorem ipsum dolor sit amet, ad duo fugit aeque fabulas, in lucilius prodesset pri. Veniam delectus ei vis.</p>
+                </div><!-- end b-feature-block -->
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end best-features -->
+<!--========================= NEWSLETTER-1 ==========================-->

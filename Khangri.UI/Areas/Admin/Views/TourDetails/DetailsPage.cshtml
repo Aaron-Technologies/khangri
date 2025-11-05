@@ -1,0 +1,367 @@
+﻿@using Khangri.UI.Models
+@model TourdetailsViewModel
+@{
+    ViewData["Title"] = "Tour Details";
+}
+<!--================ PAGE-COVER ================-->
+<section class="page-cover head_cover" id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="page-title">@Model.Tours.TourName</h1>
+                <ul class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="@Url.Action("index","Home")">Home</a></li>
+                    <li class="breadcrumb-item">/ @Model.Tours.TourName</li>
+                </ul>
+            </div><!-- end columns -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end page-cover -->
+<!--===== INNERPAGE-WRAPPER ====-->
+<section class="innerpage-wrapper">
+    <div id="tour-details" class="innerpage-section-padding">
+        <div class="container">
+            <div class="page-heading text-start mb-0">
+                <h2> @Model.Tours.NoOfDays Days @Model.Tours.TourName </h2>
+            </div>
+            <div class="side-bar d-flex mb-4">
+                <div class="support-contact">
+                    <span><i class="fa-regular fa-clock"></i></span>
+                    <p>
+                        @{
+                            var totaldays = "";
+                            var night = Model.Tours.NoOfDays - 1;
+                            var days = Model.Tours.NoOfDays;
+                            totaldays = days + "D/" + night + "N";
+
+                        }
+                        @totaldays
+                    </p>
+                </div>
+                
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-9 col-xl-9 content-side">
+                    
+                    <div class="detail-slider">
+                         
+                                
+                            <div class="feature-slider">
+                            @{
+
+                                foreach (var item in Model.TourImages.OrderBy(s => s.TourName))
+                                {
+                                <div><img src="@Url.Action("image","Image",new{imageId=@item.ImageId})" class="img-fluid" alt="feature-img" /></div>
+                               @* <div><img src="~/images/custom/north_lachen_lachung/pic2.jpg" class="img-fluid" alt="feature-img" /></div>
+                                <div><img src="~/images/custom/north_lachen_lachung/pic3.jpg" class="img-fluid" alt="feature-img" /></div>
+                                <div><img src="~/images/custom/north_lachen_lachung/pic4.jpg" class="img-fluid" alt="feature-img" /></div>
+                                <div><img src="~/images/custom/north_lachen_lachung/pic5.jpg" class="img-fluid" alt="feature-img" /></div>*@
+                                }
+                             }
+                            </div>
+
+                            <!-- end feature-slider -->
+
+                            <div class="feature-slider-nav">
+                            @{
+
+                                foreach (var item in Model.TourImages.OrderBy(s=>s.TourName))
+                                {
+                                    <div><img src="@Url.Action("image","Image",new{imageId=@item.ImageId})" class="img-fluid" alt="feature-img" /></div>
+                                   @*<div><img src="~/images/custom/north_lachen_lachung/pic2.jpg" class="img-fluid" alt="feature-img" /></div>
+                                    <div><img src="~/images/custom/north_lachen_lachung/pic3.jpg" class="img-fluid" alt="feature-img" /></div>
+                                    <div><img src="~/images/custom/north_lachen_lachung/pic4.jpg" class="img-fluid" alt="feature-img" /></div>
+                                    <div><img src="~/images/custom/north_lachen_lachung/pic5.jpg" class="img-fluid" alt="feature-img" /></div>*@
+                                }
+                            }
+                            </div>
+                            
+                    
+                            <ul class="list-unstyled features tour-features t">
+                                <li><div class="f-icon"><i class="fa-solid fa-hotel"></i></div><div class="f-text"><p class="f-heading">&nbsp;Stay</p></div></li>
+                                <li><div class="f-icon"><i class="fa fa-car"></i></div><div class="f-text"><p class="f-heading">&nbsp;Cars</p></div></li>
+                                <li><div class="f-icon"><i class="fa-solid fa-utensils"></i></div><div class="f-text"><p class="f-heading">&nbsp;Meals</p></div></li>
+                                <li><div class="f-icon"><i class="fa-regular fa-eye"></i></div><div class="f-text"><p class="f-heading">&nbsp;Sightseeing</p></div></li>
+
+                            </ul>
+                    </div>
+                        
+
+                        <!-- end detail-slider -->
+
+                    <div class="detail-tabs mb-3 ">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item"><a class="nav-link active" href="#highlights" data-bs-toggle="tab">Highlights</a></li>
+                            <li class="nav-item"><a class="nav-link " href="#tour-overview" data-bs-toggle="tab">Overview</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div id="highlights" class="tab-pane in active bg_hill">
+
+                                <div class="row" id="faq-page">
+                                    <div class="col-md-12 tab-text content-side">
+                                        @Html.Raw(Model.Tours.TourHighlight)
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+
+                            </div><!-- end restaurant -->
+
+                            <div id="tour-overview" class="tab-pane ">
+                                <div class="row">
+                                    <div class="col-md-12 tab-text">
+                                        <h3>About the Tour:</h3>
+                                        <p class="text-justify">
+                                           @Model.Tours.TourInroduction
+                                        </p>
+                                       
+                                        @Html.Raw(Model.Tours.TourOverview)
+
+
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end hotel-overview -->
+                        </div><!-- end tab-content -->
+                    </div><!-- end detail-tabs -->
+
+                    <div class="detail-tabs mb-3 ">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="nav-item"><a class="nav-link active" href="#Itinerary" data-bs-toggle="tab">Itinerary</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#options" data-bs-toggle="tab">Package Options</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <div id="Itinerary" class="tab-pane in active">
+                                <div class="row" id="faq-page">
+                                    <div class="col-md-12 tab-text content-side">
+                                        
+                                            
+                                            <h3>@Model.Tours.TourName ITINERARY</h3>
+                                            <div class="faq-block">
+                                            @{
+                                              foreach (var item in Model.TourItinerary.Where(ti => ti.TourId == Model.Tours.TourId).OrderBy(o=>o.Day))
+                                              {
+                                               
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <a data-bs-toggle="collapse" href="#collapse_@item.Day">
+                                                                <h4 class="card-title">
+                                                                    <span class="badge bg-warning text-dark">Day @item.Day</span> 
+                                                                     @item.Itinery
+                                                                </h4>
+                                                            </a>
+                                                        </div><!-- end card-header -->
+
+                                                        <div id="collapse_@item.Day" class="panel-collapse collapse ">
+                                                            <div class="card-body">
+                                                                @Html.Raw(item.ItineryDetails)
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                               
+                                               }
+                                            }
+                                           </div>
+                                        
+                                        
+
+                                       <!-- end faq-block -->
+
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end hotel-overview -->
+
+                            <div id="options" class="tab-pane">
+                                <div class="row">
+                                    <div class="col-md-12 col-lg-12 tab-text">
+                                        <h3>Standard Package Options</h3>
+                                        <div class="card-block t">
+                                            <h2 class="card-number text-warning">
+                                                Standard Tour Package
+                                                <a href="" class="btn btn-danger float-right">Book </a>
+                                            </h2>
+                                            <h3 class="card-expiry">6 Days, 5 Nights</h3>
+                                            <div class="card-name mb-0">
+                                                <h3 class="user-name text-danger">INR 24,999 <span class="h6 text-dark"> / Adulits</span></h3>
+                                            </div><!-- end card-name -->
+                                        </div>
+                                        <div class="card-block t">
+                                            <h2 class="card-number text-warning">
+                                                Deluxe Tour Package
+                                                <a href="" class="btn btn-danger float-right">Book </a>
+                                            </h2>
+                                            <h3 class="card-expiry">6 Days, 5 Nights</h3>
+                                            <div class="card-name mb-0">
+                                                <h3 class="user-name text-danger">INR 27,999 <span class="h6 text-dark"> / Adulits</span></h3>
+                                            </div><!-- end card-name -->
+                                        </div>
+                                        <div class="card-block t">
+                                            <h2 class="card-number text-warning">
+                                                Super Deluxe Tour Package
+                                                <a href="" class="btn btn-danger float-right">Book </a>
+                                            </h2>
+                                            <h3 class="card-expiry">6 Days, 5 Nights</h3>
+                                            <div class="card-name mb-0">
+                                                <h3 class="user-name text-danger">INR 30,999<span class="h6 text-dark"> / Adulits</span></h3>
+                                            </div><!-- end card-name -->
+                                        </div>
+
+                                    </div><!-- end columns -->
+                                </div><!-- end row -->
+                            </div><!-- end pick-up -->
+
+                        </div><!-- end tab-content -->
+                    </div><!-- end detail-tabs -->
+
+                </div><!-- end columns -->
+
+                <div class="col-12 col-md-12 col-lg-3 side-bar right-side-bar">
+
+                    <div class="side-bar-block booking-form-block" id="booking_for">
+                        <h2 class="selected-price">@Model.Tours.Price</h2>
+
+                        <div class="booking-form">
+                            <h3>Book Tour</h3>
+                            <p>Find your dream tour today</p>
+
+                            <form id="tour_frm_booking" name="tour_frm_booking" method="post">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="First Name" id="txt_first_name" name="txt_first_name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Last Name" id="txt_last_name" name="txt_last_name" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email" id="txt_email" name="txt_email" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Phone" id="txt_phone" name="txt_phone" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Country" id="txt_country" name="txt_country" />
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control dpd3" placeholder="Booking Date" id="txt_booking_date" name="txt_booking_date" />
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-12 col-xl-6 no-sp-r">
+                                        <div class="form-group right-icon">
+                                            <select class="form-control" id="txt_adults" name="txt_adults">
+                                                <option selected value="">Adults</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-lg-12 col-xl-6 no-sp-l">
+                                        <div class="form-group right-icon">
+                                            <select class="form-control" id="txt_children" name="txt_children">
+                                                <option selected value="">Children</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                            </select>
+                                            <i class="fa fa-angle-down"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*<div class="form-group right-icon">
+                                    <select class="form-control" id="txt_pay_method" name="txt_pay_method">
+                                        <option selected value="">Payment Method</option>
+                                        <option value="Credit Card">Credit Card</option>
+                                        <option value="Paypal">Paypal</option>
+                                    </select>
+                                    <i class="fa fa-angle-down"></i>
+                                </div>*@
+
+                                <div class="checkbox custom-check">
+                                    <input type="checkbox" id="check01" name="checkbox" />
+                                    <label for="check01"><span><i class="fa fa-check"></i></span>By continuing, you are agree to the <a href="@Url.Action("TermsCondition","Home")">Terms & Condition</a></label>
+                                </div>
+                                <div class="col-md-12 text-center" id="result_msg"></div>
+                                <button class="btn btn-block btn-orange w-100" type="submit" id="btnBookingSubmit" name="submit">Send Enquiry</button>
+                            </form>
+
+                        </div><!-- end booking-form -->
+                    </div><!-- end side-bar-block -->
+
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="side-bar-block main-block ad-block">
+                                <div class="main-img ad-img">
+                                    <a href="#">
+                                        <img src="~/images/car-ad.jpg" class="img-fluid" alt="car-ad" />
+                                        <div class="ad-mask">
+                                            <div class="ad-text">
+                                                <span>Luxury</span>
+                                                <h2>Car</h2>
+                                                <span>Offer</span>
+                                            </div><!-- end ad-text -->
+                                        </div><!-- end columns -->
+                                    </a>
+                                </div><!-- end ad-img -->
+                            </div><!-- end side-bar-block -->
+                        </div><!-- end columns -->
+
+                        <div class="col-12 col-md-6 col-lg-12">
+                            <div class="side-bar-block support-block">
+                                <h3>Need Help</h3>
+                                <p class="text-justify">
+                                    Our dedicated customer support team is here 24/7 to assist you. From itinerary changes to travel tips, we're just a
+                                    call away, ensuring your journey is smooth and worry-free.
+                                </p>
+                                <div class="support-contact">
+                                    <p class="list-inline-item">
+                                        <span><i class="fa fa-phone"></i></span>
+                                        @{
+                                            foreach (var item in Model.Contacts.Where(s => s.IsActive).Take(2))
+                                            {
+                                                <a class="text-muted" href="tel:@item.Phone" target="_blank">@item.Phone</a>
+
+                                            }
+                                        }
+                                    </p>
+                                </div><!-- end support-contact -->
+                            </div><!-- end side-bar-block -->
+                        </div><!-- end columns -->
+
+                    </div><!-- end row -->
+                </div><!-- end columns -->
+
+            </div><!-- end row -->
+            <br><br>
+            <h3 class="mb-3"> <strong>Gangtok Darjeeling Tour Package Policies:</strong> </h3>
+            <div class="row">
+                @Html.Raw(Model.TourTermsCondition.Accommodation)
+                @Html.Raw(Model.TourTermsCondition.Food)
+                @Html.Raw(Model.TourTermsCondition.TermsConditionsPermits)
+                @Html.Raw(Model.TourTermsCondition.MiscellaneousExpenses)
+                @Html.Raw(Model.TourTermsCondition.TermsConditionsGeneral)
+                @Html.Raw(Model.TourTermsCondition.CancellationPolicy)
+
+                <div class="col-12">
+                    <a class="btn btn-block btn-orange w-100" href="#booking_for">Send Enquiry</a>
+                </div>
+            </div>
+
+
+        </div><!-- end container -->
+    </div><!-- end tour-detail -->
+</section><!-- end innerpage-wrapper -->
+<!--========================= NEWSLETTER-1 ==========================-->
+
+@section Scripts{
+   
+}
