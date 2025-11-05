@@ -1,0 +1,117 @@
+﻿@using Khangri.Entities
+@model List<EntitySetup>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "SetUp";
+}
+
+<div class="col-12">
+    <div class="box">
+        <div class="card-header">
+            <h4 class="card-title">SetUp</h4>
+            <a href="@Url.Action("add","SetUp")" class="btn btn-primary btn-lg float-right">Add New</a>
+        </div>
+
+        <div class="box-body">
+            <div class="table-responsive">
+                <table id="tbl_Images" class="table table-bordered table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th class="fw-bold">Company</th>
+                            @*<th class="fw-bold">Logo</th>*@
+                            @*<th class="fw-bold">Status</th>*@
+                            <th class="fw-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr role="row">
+
+                                <td class="align-middle">
+                                    @item.CompanyName
+                                </td>
+                                @*<td class="align-middle">
+                                    <img class="mdi-rounded-corner open-modal" width="100" data-image="@item.LogoPrimary" src="@Url.Action("image","Image",new {imageId=item.ImageId})" alt="@item.CompanyName">
+                                </td>*@
+                                
+
+                                <td class="align-middle">
+                                    <div class="d-flex">
+                                        <a href="@Url.Action("edit","SetUp",new {setUpId = item.SetUpId})" class="btn btn-primary btn-sm"><i class="fa  fa-pencil-square fa-2x"></i></a>
+                                        @* <button data-deleteurl="@Url.Action("delete","ShipType",new {ShipTypeId = ship.ShipTypeId})" class="btn btn-danger shadow btn-xs sharp btn-delete"><i class="fas fa-trash-alt"></i></button>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+           @*<select class="form-select" id="ddlFilter">
+                @{
+                    foreach (var item in ViewBag.FilterItems as List<SelectListItem>)
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                }
+            </select>
+            <button type="button" id="btn-filter" class="btn btn-success" disabled="disabled">Submit</button>
+        
+            <div class="row" id="cms-content">
+
+            </div>*@
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Admin/assets/vendor_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tbl_SetUp').DataTable({
+                pageLength: 10
+            });
+            //$('#ddlFilter').on('change',function(){
+            //    var val=$.trim($(this).val());
+            //    if(val=="0"){
+            //        $('#btn-filter').attr('disabled','disabled');
+                    
+            //    }
+            //    else{
+            //        $('#btn-filter').removeAttr('disabled');
+            //    }
+            //});;
+            //$('#btn-filter').on('click',function(){
+            //    $.ajax({
+            //        url: '@Url.Action("SetupData","SetUp")',
+            //        type:'POST',
+            //        data:JSON.stringify({
+            //           // setup:{
+            //                setupId: $.trim($('#ddlFilter').val())
+            //           // }
+            //        }),
+            //        contentType:'application/json',
+            //        success:function(response){
+            //            if (response.status==""){
+
+            //            }else{
+            //                $('#cms-content').text(response.data.companyName)
+            //            }
+
+            //        },
+            //        error:function(){
+
+            //        },
+            //        beforeSend:function(){
+            //            $('#cms-content').empty().text('');
+                        
+            //        },
+            //        complete: function(){
+
+            //        }
+                    
+            //    })
+            //})
+        });
+    </script>
+}

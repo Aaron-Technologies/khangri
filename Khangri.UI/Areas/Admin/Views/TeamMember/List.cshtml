@@ -1,0 +1,78 @@
+﻿@using Khangri.Entities
+@model List<EntityTeamMember>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Team Member";
+}
+
+<div class="col-12">
+    <div class="box">
+        <div class="card-header">
+            <h4 class="card-title">Team Member</h4>
+            <a href="@Url.Action("add","TeamMember")" class="btn btn-primary btn-lg float-right">Add New</a>
+        </div>
+
+        <div class="box-body">
+            <div class="table-responsive">
+                <table id="tbl_TeamMember" class="table table-bordered table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th class="fw-bold">Name</th>
+                            <th class="fw-bold">Image</th>
+                            <th class="fw-bold">Caption</th>
+                            <th class="fw-bold">Designation</th>
+                            <th class="fw-bold">Status</th>
+                            <th class="fw-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var entity in Model)
+                        {
+                            <tr role="row">
+                                <td class="align-middle">@entity.Name</td>
+                                <td class="align-middle">
+                                    <img class="mdi-rounded-corner open-modal" width="100" data-location="@entity.ImageId" src="@Url.Action("image","Image",new {ImageId=entity.ImageId})" alt="@entity.Name">
+
+                                </td>
+                                <td class="align-middle">
+                                    @entity.Caption
+                                </td>
+                                <td class="align-middle">
+                                    @entity.Designation
+                                </td>
+                              
+                                <td class="align-middle">
+                                    @if (entity.IsActive)
+                                    {
+                                        <span class="badge light badge-success p-5">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge light badge-danger p-5">Inactive</span>
+                                    }
+                                </td>
+                                <td class="align-middle">
+                                    <div class="d-flex">
+                                        <a href="@Url.Action("edit","TeamMember",new {teamMemberId=entity.TeamMemberId})" class="btn btn-primary btn-sm"><i class="fa  fa-pencil-square fa-2x"></i></a>
+                                        @* <button data-deleteurl="@Url.Action("delete","ShipType",new {ShipTypeId = ship.ShipTypeId})" class="btn btn-danger shadow btn-xs sharp btn-delete"><i class="fas fa-trash-alt"></i></button>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Admin/assets/vendor_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tbl_TeamMember').DataTable({
+                pageLength: 10
+            });
+        });
+    </script>
+}

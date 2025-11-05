@@ -1,0 +1,79 @@
+﻿@using Khangri.Entities
+@model List<EntitySightSeeing>
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Sightseeing";
+}
+
+<div class="col-12">
+    <div class="box">
+        <div class="card-header">
+            <h4 class="card-title">All Sightseeing</h4>
+            <a href="@Url.Action("add","SightSeeing")" class="btn btn-primary btn-lg float-right">Add New</a>
+        </div>
+
+        <div class="box-body">
+            <div class="table-responsive">
+                <table id="tbl_SightSeeing" class="table table-bordered table-striped">
+                    <thead>
+                        <tr role="row">
+                            <th class="fw-bold">Sightseeing</th>
+                            @* <th class="fw-bold">Estimate Time</th> *@
+                            <th class="fw-bold">Image</th>
+                            @* <th class="fw-bold">Altitude</th> *@
+                            <th class="fw-bold">Status</th>
+                            <th class="fw-bold">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sightSeeing in Model)
+                        {
+                            <tr role="row">
+                                <td class="align-middle">
+                                    @sightSeeing.SightSeeing
+                                </td>
+                                @* <td class="align-middle">
+                                    @sightSeeing.EstimateTime
+                                </td> *@
+                                <td class="align-middle">
+                                    <img class="mdi-rounded-corner open-modal" width="100" data-image="@sightSeeing.ImageFile" src="@Url.Action("image","SightSeeing",new {imageId=sightSeeing.SightSeeingId})" alt="@sightSeeing.ImageFile">
+                                </td>
+                                 @* <td class="align-middle">
+                                    @sightSeeing.Altitude
+                                </td> *@
+                                
+                                <td class="align-middle">
+                                    @if (sightSeeing.IsActive)
+                                    {
+                                        <span class="badge light badge-success p-5">Active</span>
+                                    }
+                                    else
+                                    {
+                                        <span class="badge light badge-danger p-5">Inactive</span>
+                                    }
+                                </td>
+                                <td class="align-middle">
+                                    <div class="d-flex">
+                                        <a href="@Url.Action("edit","SightSeeing",new {sightSeeingId = sightSeeing.SightSeeingId})" class="btn btn-primary btn-sm"><i class="fa  fa-pencil-square fa-2x"></i></a>
+                                        @* <button data-deleteurl="@Url.Action("delete","ShipType",new {ShipTypeId = ship.ShipTypeId})" class="btn btn-danger shadow btn-xs sharp btn-delete"><i class="fas fa-trash-alt"></i></button>*@
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/Admin/assets/vendor_components/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#tbl_SightSeeing').DataTable({
+                pageLength: 10
+            });
+        });
+    </script>
+}

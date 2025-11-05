@@ -1,0 +1,184 @@
+﻿@using Khangri.Entities;
+@model EntityTour;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit New Tour";
+}
+
+@section Styles{
+    @* <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet"> *@
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+}
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Edit Tour</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-8">
+
+                    @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Tour Type<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+
+                                @Html.DropDownListFor(m=>m.TourTypeId, (ViewBag.AllTourType as IEnumerable<SelectListItem>), new {@class="default-select size-1 form-control wide mb-3"})
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Tour Name<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.TourName, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.TourName,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                     
+
+                        <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Introduction<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextAreaFor(m=>m.TourInroduction, 4, 50,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.TourInroduction,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                       
+                        <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Days<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.NoOfDays, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.NoOfDays,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                      
+                        @* <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Price:</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.Price, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.Price,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div> *@
+                        <div class="form-group row ">
+
+                            <div class="col-md-3 col-form-label">
+                                <span>Inclusions<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-12">
+                                @Html.TextAreaFor(m=>m.TourHighlight,new {@class="form-control",@id="noteHighlight"})
+
+                                @Html.ValidationMessageFor(m => m.TourHighlight,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row ">
+                            <div class="col-md-3 col-form-label">
+                                <span>Things Not To Miss<span class="text-danger">*</span> :</span>
+
+                            </div>
+                            <div class="col-md-12">
+                                @Html.TextAreaFor(m=>m.TourOverview,new {@class="form-control",@id="noteOverview"})
+
+                                @Html.ValidationMessageFor(m => m.TourOverview,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-md-3 col-form-label">
+                                <span>Active:</span>
+                                <span class="text-danger">*</span>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="checkbox custom-checkbox mb-3 checkbox-success check-lg">
+                                    @Html.CheckBoxFor(m => m.IsActive, new {@class="filled-in chk-col-green", id="chkActive"})
+                                    <label class="form-check-label" for="chkActive"></label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                            </div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp<a href="@Url.Action("list","Tour")" class="btn btn-success">Cancel</a>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+               
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#noteOverview').summernote({
+                height: 100
+            });
+            $('#noteHighlight').summernote({
+                height: 100
+            });
+        @{
+            var json = ViewBag.Status?.ToString();
+            if (!String.IsNullOrWhiteSpace(json))
+            {
+                json = HttpUtility.JavaScriptStringEncode(json);
+            }
+        }
+
+                                            var msg = '@Html.Raw(json)';
+            if (msg != null && msg != undefined && $.trim(msg) != '') {
+                var data = JSON.parse(msg);
+                if (data.Status == 'Failed') {
+                    swal({
+                        title: data.Title,
+                        text: data.Description,
+                        type: "error",
+                        button: "Ok",
+                    });
+                } else if (data.Status == 'Success') {
+                    swal({
+                            title: data.Title,
+                            text: data.Description,
+                            type: "success",
+                            button: "Ok",
+                        }, function(){
+                            var url = $.trim('@Url.Action("list","Tour")');
+                            window.location.href = url;
+                    });
+                }
+            }
+        });
+    </script>
+}
