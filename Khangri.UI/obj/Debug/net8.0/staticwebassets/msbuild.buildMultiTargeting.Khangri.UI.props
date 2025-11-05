@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\Khangri.UI.props" />
-</Project>
