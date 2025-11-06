@@ -1,0 +1,380 @@
+﻿@using Khangri.Entities;
+@model EntitySetup;
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Edit SetUp";
+}
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Edit Setup</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-6">
+
+                    @using (Html.BeginForm(FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Company Name<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.CompanyName, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.CompanyName,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Introduction<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextAreaFor(m=>m.CompanyIntroduction,4,50,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.CompanyIntroduction,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Caption<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.Caption, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.Caption,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                     @*   <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Parent Location<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+
+                                @Html.DropDownListFor(m=>m.M01_LocationId, (ViewBag.AllLocations as IEnumerable<SelectListItem>), new {@class="default-select size-1 form-control wide mb-3"})
+                            </div>
+                        </div>*@
+
+
+                        <div class="form-group row">
+                            <div class="col-md-4 ">
+                                <span>Primary Logo@*<span class="required">*</span>*@ :</span>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.LogoPrimary, new {id="txtImageFile", @readonly="readonly",@class="form-control"})
+                                    <div class="input-group-append">
+                                        <label for="image-upload">
+
+                                            <span class="btn btn-primary input-group-btn">
+                                                <i class="fa fa-upload"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+
+                                    <br />
+                                    @*@Html.ValidationMessageFor(m => m.ImageFile,null,new{@class="field-validation-valid text-danger"})*@
+                                    <input type="file" name="FileDetails" style="height:0px;width:0px;position:absolute;top:-10px;left:-10px;visibility:collapse;"
+                                           id="image-upload" accept="image/*">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 ">
+                                <span>Secondary Logo@*<span class="required">*</span>*@ :</span>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.LogoSecondary, new {id="txtImageFile_two", @readonly="readonly",@class="form-control"})
+                                    <div class="input-group-append">
+                                        <label for="image-upload_two">
+
+                                            <span class="btn btn-primary input-group-btn">
+                                                <i class="fa fa-upload"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+
+                                    <br />
+                                    @*@Html.ValidationMessageFor(m => m.ImageFile,null,new{@class="field-validation-valid text-danger"})*@
+                                    <input type="file" name="FileDetails_two" style="height:0px;width:0px;position:absolute;top:-10px;left:-10px;visibility:collapse;"
+                                           id="image-upload_two" accept="image/*">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>PhoneNo<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.PhoneNoPrimary,null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.PhoneNoPrimary,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>WhatsApp<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.WhatsAppPrimary, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.WhatsAppPrimary,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                       
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Email<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.EmailPrimary, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.EmailPrimary,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Google Review Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.GoogleReviewUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.GoogleReviewUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>FaceBook Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.FBUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.FBUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Instagram Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.InstagramUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.InstagramUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+                         <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Twiter Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.TwiterUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.TwiterUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>YouTube Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.YouTubeUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.YouTubeUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                         <div class="form-group row">
+                            <div class="col-md-4 col-form-label">
+                                <span>Linkedin Url<span class="text-danger">*</span> :</span>
+                            </div>
+                            <div class="col-md-8">
+                                @Html.TextBoxFor(m=>m.LinkedinUrl, null,new {@class="form-control"})
+
+                                @Html.ValidationMessageFor(m => m.LinkedinUrl,null,new{@class="field-validation-valid text-danger"})
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <div class="col-md-4 ">
+                                <span>Favicon@*<span class="required">*</span>*@ :</span>
+
+                            </div>
+                            <div class="col-md-8">
+                                <div class="input-group">
+                                    @Html.TextBoxFor(m => m.Favicon, new {id="img-favicon", @readonly="readonly",@class="form-control"})
+                                    <div class="input-group-append">
+                                        <label for="icon-upload">
+
+                                            <span class="btn btn-primary input-group-btn">
+                                                <i class="fa fa-upload"></i>
+                                            </span>
+                                        </label>
+                                    </div>
+
+
+
+                                    <br />
+                                    @*@Html.ValidationMessageFor(m => m.ImageFile,null,new{@class="field-validation-valid text-danger"})*@
+                                    <input type="file" name="FileDetails" style="height:0px;width:0px;position:absolute;top:-10px;left:-10px;visibility:collapse;"
+                                           id="icon-upload" accept="image/*">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        
+                        <div class="row">
+                            <div class="col-md-4">
+                            </div>
+                            <div class="col-md-8">
+                                <button type="submit" class="btn btn-success">Submit</button>&nbsp;&nbsp<a href="@Url.Action("list","SetUp")" class="btn btn-success">Cancel</a>
+                            </div>
+                        </div>
+
+
+                    }
+                </div>
+
+                <div class="col-sm-6">
+                    <img src="~/images/no-image.jpg" id="previewimage" height="200" width="150" />
+                    <img src="~/images/no-image.jpg" id="previewimage_two" height="200" width="150" />
+                    <img src="~/images/no-image.jpg" id="previewicon" height="200" width="150" />
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('#image-upload').on('change', function () {
+                if ($(this).val() != '') {
+                    var fileName = $.trim($(this).val());
+                    if (fileName.indexOf('\\') > -1) {
+                        var fileParts = fileName.split('\\');
+                        var fileNameOnly = fileParts[fileParts.length - 1];
+                        $('#txtImageFile').val(fileNameOnly);
+
+                        const file = this.files[0];
+
+                        if (file) {
+                            let reader = new FileReader();
+                            reader.onload = function (event) {
+                                console.log(event.target.result);
+                                $('#previewimage').attr('src', event.target.result);
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+
+                }
+            });
+
+            $('#image-upload_two').on('change', function () {
+                if ($(this).val() != '') {
+                    var fileName = $.trim($(this).val());
+                    if (fileName.indexOf('\\') > -1) {
+                        var fileParts = fileName.split('\\');
+                        var fileNameOnly = fileParts[fileParts.length - 1];
+                        $('#txtImageFile_two').val(fileNameOnly);
+
+                        const file = this.files[0];
+
+                        if (file) {
+                            let reader = new FileReader();
+                            reader.onload = function (event) {
+                                console.log(event.target.result);
+                                $('#previewimage_two').attr('src', event.target.result);
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+
+                }
+            });
+
+            $('#icon-upload').on('change', function () {
+                if ($(this).val() != '') {
+                    var fileName = $.trim($(this).val());
+                    if (fileName.indexOf('\\') > -1) {
+                        var fileParts = fileName.split('\\');
+                        var fileNameOnly = fileParts[fileParts.length - 1];
+                        $('#img-favicon').val(fileNameOnly);
+
+                        const file = this.files[0];
+
+                        if (file) {
+                            let reader = new FileReader();
+                            reader.onload = function (event) {
+                                console.log(event.target.result);
+                                $('#previewicon').attr('src', event.target.result);
+                            }
+                            reader.readAsDataURL(file);
+                        }
+                    }
+
+                }
+            });
+
+        @{
+            var json = ViewBag.Status?.ToString();
+            if (!String.IsNullOrWhiteSpace(json))
+            {
+                json = HttpUtility.JavaScriptStringEncode(json);
+            }
+        }
+
+           var msg = '@Html.Raw(json)';
+            if (msg != null && msg != undefined && $.trim(msg) != '') {
+                var data = JSON.parse(msg);
+                if (data.Status == 'Failed') {
+                    swal({
+                        title: data.Title,
+                        text: data.Description,
+                        type: "error",
+                        button: "Ok",
+                    });
+                } else if (data.Status == 'Success') {
+                    swal({
+                        title: data.Title,
+                        text: data.Description,
+                        type: "success",
+                        button: "Ok",
+                    }, function () {
+                        var url = $.trim('@Url.Action("list","SetUp")');
+                        window.location.href = url;
+                    });
+                }
+            }
+        });
+
+    </script>
+}

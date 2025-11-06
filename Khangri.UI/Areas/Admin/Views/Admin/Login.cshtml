@@ -1,0 +1,75 @@
+﻿@using Khangri.UI.Models
+@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewData["Title"] = "LogIn";
+}
+@model LoginViewModel
+<section class="py-4 bg-white" style="width: 290px; ">
+    <div class="colored-border"></div>
+    <div id="full-page-form">
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-md-12">
+                    
+                    <div class="full-page-title">
+                        <div class="text-center">
+                            <a href=""><img src="~/images/custom/logo/logo.jpg" alt="Company Logo" width="100"></a> 
+                        </div>
+                    </div><!-- end full-page-title -->
+
+                    <div class="custom-form custom-form-fields">
+                        
+                        <div class="">
+
+                                <h3 class="fw-bold">Login</h3>
+                                    @using (Html.BeginForm(FormMethod.Post,false, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <div class="input-group mb-0">
+                                            @*<input type="text" class="form-control" placeholder="Username" required />*@
+                                            <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            @Html.TextBoxFor(m=>m.UserId,null,new{@class="form-control",placeholder="ex@example.com"}) <br>
+                                        </div>
+                                            @Html.ValidationMessageFor(m => m.UserId,null,new{@class="field-validation-valid text-danger text-center d-block"})
+
+                                        
+
+                                        <div class="input-group mb-0 mt-2">
+                                            @*<input type="password" class="form-control" placeholder="Password" required />*@
+                                            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                            @Html.PasswordFor(m=>m.Password,new{@class="form-control",placeholder="Password"}) <br>
+                                        </div>
+                                            @Html.ValidationMessageFor(m => m.Password,null,new{@class="field-validation-valid text-danger text-center d-block"})
+
+                                        <br>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                            <div class="checkbox">
+                                                <input type="checkbox" id="basic_checkbox_1">
+                                                <label for="basic_checkbox_1">Remember Me</label>
+                                            </div>
+                                            </div>
+
+                                            <!-- /.col -->
+                                            <div class="col-12 text-center">
+                                            <button type="submit" class="btn btn-orange btn-block btn-flat margin-top-10">Login</button>
+                                            </div>
+                                            <!-- /.col -->
+                                        </div>
+                                    }
+                                <div class="other-links">
+                                    @*<p class="link-line">New Here ? <a href="@Url.Action("Signup","Account")">Signup</a></p>*@
+                                </div>
+                                <div class="other-links mt-2">
+                                    <p class="link-line text-danger"><a href="@Url.Action("forgot","Account")">Forgot Password</a></p>
+                                    @*<a class="simple-link" href="#">Forgot Password ?</a>*@
+                                </div>
+                            </div>
+                        <!-- end other-links -->
+                    </div><!-- end custom-form -->
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end full-page-form -->
+    <div class="colored-border"></div>
+</section>

@@ -1,0 +1,54 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+    ViewData["Title"] = "SignUp";
+}
+<section class="py-4 bg-white" style="width: 290px; ">
+    <div class="colored-border"></div>
+    <div id="full-page-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-12">
+
+                    <div class="full-page-title">
+                        <div class="text-center">
+                            <a href=""><img src="~/images/custom/logo/logo.jpg" alt="Company Logo" width="100"></a> 
+                        </div>
+                    </div><!-- end full-page-title -->
+
+                    <div class="custom-form custom-form-fields">
+                        <h3 class="fw-bold">Signup</h3>
+                        <form>
+                            <div class="input-group mb-2">
+                                <input type="text" class="form-control" placeholder="Username" required />
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <input type="email" class="form-control" placeholder="Email" required />
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <input type="password" class="form-control" placeholder="Password" required />
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            </div>
+
+                            <div class="input-group mb-2">
+                                <input type="password" class="form-control" placeholder="Confirm Password" required />
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                            </div>
+
+                            <button class="btn btn-orange btn-block">Signup</button>
+                        </form>
+
+                        <div class="other-links">
+                            <p class="link-line">Already Have An Account ? <a href="@Url.Action("Login","Account")" class="text-danger">Login Here</a></p>
+                        </div><!-- end other-links -->
+                    </div><!-- end custom-form -->
+
+                </div><!-- end columns -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end full-page-form -->
+    <div class="colored-border"></div>
+</section>

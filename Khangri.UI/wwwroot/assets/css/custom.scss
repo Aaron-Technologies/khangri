@@ -1,0 +1,59 @@
+header.style-2.t .header-logo img {
+    max-width: 100px !important;
+    min-width: 100px !important;
+
+    @media screen and (max-width: 991.95px){
+        max-width: 50px !important;
+        min-width: 50px !important;
+    }
+}
+
+
+
+.blog-section.t .blog-single2 .image {
+    max-height: 270px;
+}
+
+.inner-banner-section{
+    background-image: url(../images/custom/banner.jpg) !important;
+}
+.best-plan-single1 {
+    .para{
+        font-size: 16px !important;
+        font-weight: normal !important;
+        text-align: justify;
+        color: #717171 !important;
+    }
+}
+
+.video-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/custom/banner.jpg) !important;
+}
+
+.a-btn{
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-color1);
+    font-family: var(--font-merriw);
+    text-decoration: underline;
+}
+
+
+
+.banner-section2 .swiper-slide.client{
+    &:before{
+        background-color: transparent !important;
+    }
+    .banner-bg11 {
+        animation: none !important;
+    }
+} 
+
+.content {
+    p{
+        font-size: 1.5rem !important;
+        font-weight: 100 !important;
+        text-align: justify;
+        line-height: 23px;
+    }
+}
