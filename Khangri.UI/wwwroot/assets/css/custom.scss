@@ -1,6 +1,14 @@
 header.style-2.t .header-logo img {
-    min-width: 187px;
+    max-width: 100px !important;
+    min-width: 100px !important;
+
+    @media screen and (max-width: 991.95px){
+        max-width: 50px !important;
+        min-width: 50px !important;
+    }
 }
+
+
 
 .blog-section.t .blog-single2 .image {
     max-height: 270px;
@@ -30,12 +38,7 @@ header.style-2.t .header-logo img {
     text-decoration: underline;
 }
 
-.header-logo{
-    img{
-        max-width: 101px !important;
-        min-width: 101px !important;
-    }
-}
+
 
 .banner-section2 .swiper-slide.client{
     &:before{
@@ -45,3 +48,12 @@ header.style-2.t .header-logo img {
         animation: none !important;
     }
 } 
+
+.content {
+    p{
+        font-size: 1.5rem !important;
+        font-weight: 100 !important;
+        text-align: justify;
+        line-height: 23px;
+    }
+}
