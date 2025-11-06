@@ -36,3 +36,12 @@ header.style-2.t .header-logo img {
         min-width: 101px !important;
     }
 }
+
+.banner-section2 .swiper-slide.client{
+    &:before{
+        background-color: transparent !important;
+    }
+    .banner-bg11 {
+        animation: none !important;
+    }
+} 

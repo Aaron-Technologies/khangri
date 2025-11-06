@@ -32,4 +32,11 @@ header.style-2.t .header-logo img {
 .header-logo img {
   max-width: 101px !important;
   min-width: 101px !important;
+}
+
+.banner-section2 .swiper-slide.client:before {
+  background-color: transparent !important;
+}
+.banner-section2 .swiper-slide.client .banner-bg11 {
+  animation: none !important;
 }/*# sourceMappingURL=custom.css.map */
