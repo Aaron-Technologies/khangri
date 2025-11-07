@@ -44,5 +44,16 @@ namespace Khangri.UI.Controllers
             homeViewModel.Counters = allCounter;
             return View(homeViewModel);
         }
+
+        public IActionResult LocatioList()
+        {
+            return View();
+        }
+
+        public IActionResult LocationDetails()
+        {
+            return View();
+        }
     }
+
 }

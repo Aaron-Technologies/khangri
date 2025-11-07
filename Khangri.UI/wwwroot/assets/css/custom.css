@@ -68,4 +68,9 @@ header.style-2.t .main-nav ul li a {
   font-weight: 100 !important;
   text-align: justify;
   line-height: 23px;
+}
+
+.content.content_ p {
+  font-size: 1.8rem !important;
+  text-align: center;
 }/*# sourceMappingURL=custom.css.map */

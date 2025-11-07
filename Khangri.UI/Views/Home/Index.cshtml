@@ -1,7 +1,7 @@
 ﻿@using Khangri.UI.Models
 @model HomeViewModel
 @{
-    ViewData["Title"] = "Pakyong | Sikkim";
+    ViewData["Title"] = "Khangri Tour & Trek";
 }
 @{
     ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
@@ -39,8 +39,7 @@
 
       </div>
        
-      <div
-        class="slider-arrows arrows-style-2 sibling-2 text-center d-lg-flex d-none flex-row justify-content-between align-items-center w-100">
+      <div class="slider-arrows arrows-style-2 sibling-2 text-center d-lg-flex d-none flex-row justify-content-between align-items-center w-100">
         <div class="banner1-prev swiper-prev-arrow" tabindex="0" role="button" aria-label="Previous slide">
           <svg width="20" height="12" viewBox="0 0 20 12" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -62,6 +61,7 @@
     </div>
   </div>
 
+@* ***************************************************** Previous Banner**************************************************** *@
     @* <div class="banner-section1 overflow-hidden">
         <div class="cloud-icon1">
             <img src="~/assets/images/icons/cloud1.svg" alt="image">
@@ -104,6 +104,8 @@
             </div>
         </div>
     </div> *@
+@* ***************************************************** Previous Banner**************************************************** *@
+
 
     <div class="category-section pt-120 pb-120">
         <div class="container">
@@ -124,7 +126,7 @@
                             <img src="~/assets/images/icons/adventure.svg" alt="image">
                         </div>
                         <div class="content">
-                            <h4><a href="">Adventure</a></h4>
+                            <h4>Adventure</h4>
                         </div>
                     </div>
                 </div>
@@ -134,7 +136,7 @@
                             <img src="~/assets/images/icons/city-tour.svg" alt="image">
                         </div>
                         <div class="content">
-                            <h4><a href="">Sikkim Tour</a></h4>
+                            <h4>Sikkim Tour</h4>
                         </div>
                     </div>
                 </div>
@@ -145,7 +147,7 @@
                             <img src="~/assets/images/icons/wedding.svg" alt="image">
                         </div>
                         <div class="content">
-                            <h4><a href="">Trekking</a></h4>
+                            <h4>Trekking</h4>
                         </div>
                     </div>
                 </div>
@@ -156,7 +158,7 @@
                             <img src="~/assets/images/icons/travel.svg" alt="image">
                         </div>
                         <div class="content">
-                            <h4><a href="">Travel</a></h4>
+                            <h4>Travel</h4>
                         </div>
                     </div>
                 </div>
@@ -182,27 +184,22 @@
 					foreach (var item in Model.Locations.OrderBy(s => s.LocationId).Take(4))
 					{
                         <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
-                    <div class="deal-single1">
-                        <a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">
-                                <div class="deal-image bg_img" style="background-image: url(@Url.Action("image","Location",new{locationId=item.LocationId})); min-height: 200px;" onclick="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})>
-                            </div>
-                        </a>
-                        
-                        <div class="deal-content">
-                            <div class="review-area">
-                                <p><i class="fas fa-map-marker-alt"></i> <span class="fw-bold">@item.Altitude</span>  Feet</p>
-                            </div>
-                            <h5>TAG LINE</h5>
-                                <h4><a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">@item.Location</a></h4>
+                            <div class="deal-single1">
+                                <a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">
+                                    <div class="deal-image bg_img" style='background-image: url(@Url.Action("image","Location",new{locationId=item.LocationId})); min-height: 200px;' onclick="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})"></div>
+                                </a>
+                                
+                                <div class="deal-content">
+                                    <div class="review-area">
+                                        <p><i class="fas fa-map-marker-alt"></i> <span class="fw-bold">@item.Altitude</span>  Feet</p>
+                                    </div>
+                                    <h5>TAG LINE</h5>
+                                    <h4><a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">@item.Location</a></h4>
 
-                                <a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})" class="eg-btn btn--primary-outline btn--md">
-                                Explore Now
-                            </a>
+                                    <a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})" class="eg-btn btn--primary-outline btn--md">Explore Now</a>
+                                </div>
+                            </div>
                         </div>
-
-                    </div>
-                </div>
-
                     }
                 }
                
