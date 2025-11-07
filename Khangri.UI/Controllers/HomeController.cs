@@ -54,6 +54,16 @@ namespace Khangri.UI.Controllers
         {
             return View();
         }
+
+        public IActionResult TourList()
+        {
+            return View();
+        }
+        public IActionResult TourDetails()
+        {
+            return View();
+        }
+        
     }
 
 }
