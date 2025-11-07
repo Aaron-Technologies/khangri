@@ -29,6 +29,17 @@ header.style-2.t .main-nav ul li a {
   font-size: 11px !important;
 }
 
+.best-plan-single1 .image span.blog-category {
+  position: absolute;
+  right: -1px;
+  top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--text-primary);
+  padding: 6px 12px;
+}
+
 .blog-section.t .blog-single2 .image {
   max-height: 270px;
 }
