@@ -104,15 +104,15 @@
                 </div>
                 <ul class="menu-list">
                     <li class="menu-item-has-children">
-                        <a href="" class="drop-down active">Home</a>
+                        <a href="/" class="drop-down active">Home</a>
                        
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="" class="drop-down">Destination</a>
+                        <a href="@Url.Action("list","LocationDetails")" class="drop-down">Destination</a>
                        
                     </li>
                     <li class="menu-item-has-children">
-                        <a href="">Tours</a>
+                        <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})">Tours</a>
                     </li>
 
                     <li class="menu-item-has-children">
