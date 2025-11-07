@@ -9,6 +9,26 @@ header.style-2.t .header-logo img {
   }
 }
 
+header.style-2.t .main-nav ul {
+  text-align: center !important;
+}
+header.style-2.t .main-nav ul li a {
+  padding: 5px 0 !important;
+}
+
+.watsapp .icon {
+  margin-right: 5px !important;
+}
+.watsapp .icon img {
+  width: 30px;
+}
+.watsapp .number span {
+  font-size: 11px !important;
+}
+.watsapp .number h5 a {
+  font-size: 11px !important;
+}
+
 .blog-section.t .blog-single2 .image {
   max-height: 270px;
 }

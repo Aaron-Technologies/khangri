@@ -40,7 +40,11 @@
   .main-header .logo .logo-mini img {
     width: 38px !important;
   }
-  
+  .main-header .logo .logo-lg::before {
+    background: url(../logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
   .fw-bold {
     font-weight: 900 !important;
   }

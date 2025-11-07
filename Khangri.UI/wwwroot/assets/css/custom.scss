@@ -8,6 +8,30 @@ header.style-2.t .header-logo img {
     }
 }
 
+header.style-2.t .main-nav ul{
+    text-align: center !important;
+    li a {
+        padding: 5px 0 !important;
+    }
+} 
+
+.watsapp{
+    .icon {
+        margin-right: 5px !important;
+        img{
+            width: 30px;
+        }
+    }
+     
+    .number {
+        span {
+            font-size: 11px !important;
+        }
+        h5 a {
+            font-size: 11px !important;
+        }
+    } 
+}
 
 
 .blog-section.t .blog-single2 .image {
