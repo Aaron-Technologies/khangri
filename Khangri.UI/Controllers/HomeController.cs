@@ -55,15 +55,20 @@ namespace Khangri.UI.Controllers
             return View();
         }
 
-        public IActionResult TourList()
+       
+        public IActionResult TrekkingList()
         {
             return View();
         }
-        public IActionResult TourDetails()
+        public IActionResult TrekkingDetails()
         {
             return View();
         }
         
+        public IActionResult Gallery()
+        {
+            return View();
+        }
     }
 
 }

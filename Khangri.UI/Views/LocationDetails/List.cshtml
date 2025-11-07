@@ -1,0 +1,72 @@
+﻿@using Khangri.UI.Models
+@model List<LocationViewModel>
+@{
+    ViewData["Title"] = "Khangri Tour & Trek";
+}
+@{
+    ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
+}
+
+@section styles{
+    <style>
+        .destination-img{
+            min-height: 210px;
+            max-height: 210px;
+        }
+    </style>
+}
+
+<div class="inner-banner-section">
+    <img src="~/assets/images/bg/inner-banner-vctr.png" class="inner-banner-vector" alt="image">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-md-10 col-sm-12">
+                <div class="breadcrumb-area">
+                    <span>Find Your Desire Destination</span>
+                    <h2>All Destinations</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="destination-section pt-120 pb-120">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8 col-md-10 text-center">
+                <div class="section-title1">
+                    <span>Destination</span>
+                    <h2>Find Your Desire Destination</h2>
+                    <img src="~/assets/images/icons/section-title-vector.svg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="destination-wrap flex-wrap row">
+            @{
+				foreach(var item in Model.Where(s=>s.IsActive))
+				{
+
+                <div class="col-md-3">
+                    <div class="destination-single1">
+                        <img src="@Url.Action("image","Location",new{locationId=item.LocationId})" class="destination-img img-fluid" alt="image">
+                            <div class="content content_">
+                            <p class="text-light"><i class="fas fa-map-marker-alt"></i> @item.Altitude Feet</p>
+                            <div class="text-wrap">
+                                <h4><a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">@item.Location</a></h4>
+                                <p class="text-light">Tag Line</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                }
+            }
+            
+        </div>
+        
+    </div>
+</div>
+

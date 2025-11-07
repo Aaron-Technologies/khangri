@@ -95,7 +95,7 @@
                         <h1>Khangri Tour & Trek</h1>
                         <p>Best Way to Find your  dream place</p>
                         <div class="discover-btn">
-                            <a href="tour-list.html" class="eg-btn btn--primary btn--lg">Discover Now</a>
+                            <a href="" class="eg-btn btn--primary btn--lg">Discover Now</a>
                         </div>
                     </div>
                 </div>
@@ -206,7 +206,7 @@
             </div>
 
             <div class="text-center mt-5">
-            <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})" class="a-btn">All Destinations</a>
+            <a href="@Url.Action("list","LocationDetails")" class="a-btn">All Destinations</a>
             </div>
         </div>
     </div>
@@ -284,7 +284,7 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <a href="tour-list.html" class="a-btn">All Tours</a>
+                        <a href="" class="a-btn">All Tours</a>
                     </div>
                 </div>
             </div>
@@ -301,7 +301,7 @@
                         <p class="para">Lorem ipsum dolor sit amet, consectetur adi- piscing elit. sed do eiusmod tempor
                             incididunt ut labore et dolore magna aliqua. Ut enim ad minim. Exercitation ullam laboris
                             nisi ut aliquip ex ea commodo consequat.</p>
-                        <a href="error.html" class="eg-btn btn--primary btn--lg">Discover More</a>
+                        <a href="" class="eg-btn btn--primary btn--lg">Discover More</a>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-10 d-flex justify-content-lg-end justify-content-center">
@@ -330,7 +330,7 @@
             <div class="row g-4 justify-content-center">
 
                 @{
-				    foreach(var item in Model.Tours.Where(s => s.TourTypeId == 4))
+				    foreach(var item in Model.Tours.Where(s => s.TourTypeId == 4).Take(3))
 				    {
                         <div class="col-lg-4 col-md-6 col-sm-10">
                         <div class="blog-single2">
@@ -358,12 +358,12 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="trekking-list.html" class="a-btn">All Treks</a>
+                <a href="" class="a-btn">All Treks</a>
             </div>
         </div>
     </div>
 
-    <div class="asking-form-section">
+   <!-- <div class="asking-form-section">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-8 col-lg-10 col-md-10">
@@ -386,8 +386,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-inner">
-                                        <textarea name="message" rows="6"
-                                            placeholder="Write your message here.."></textarea>
+                                        <textarea name="message" rows="6" placeholder="Write your message here"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-center">
@@ -399,94 +398,35 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="counter-section pb-120">
         <div class="container">
             <div class="counter-wrapper">
                 <div class="row g-2 d-flex justify-content-center">
-                @{
-                    foreach (var item in Model.Counters)
-                    {
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
-                            <div class="counter-single text-center d-flex flex-column hover-border1">
-                                <div class="counter-icon">
-                                    <i class="@item.Icon w-100 fa-2x text-dark fw-bold"></i>
-                                </div>
-                                <div class="coundown d-flex flex-column">
-                                    <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                                        <h3 class="odometer" data-odometer-final="400">01</h3><i class="bi bi-plus-lg"></i>
+                    @{
+                        foreach (var item in Model.Counters)
+                        {
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
+                                <div class="counter-single text-center d-flex flex-column hover-border1">
+                                    <div class="counter-icon">
+                                        <i class="@item.Icon w-100 fa-2x text-success"></i>
                                     </div>
-                                    <p>Awesome Tour</p>
+                                    <div class="coundown d-flex flex-column">
+                                        <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                            <h3 class="odometer" data-odometer-final="@item.Value">01</h3><i class="bi bi-plus-lg"></i>
+                                        </div>
+                                        <p>@item.Title</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
                     }
-                }
                 </div>
             </div>
         </div>
     </div>
 
    
-    <div class="blog-section pb-120 overflow-hidden">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8 col-lg-10 col-md-12 text-center">
-                    <div class="section-title1">
-                        <span>Blog & News</span>
-                        <h2>Get to Know Travel Experiences</h2>
-                        <img src="~/assets/images/icons/section-title-vector.svg" alt="image">
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single1">
-                        <div class="image">
-                            <img src="~/assets/images/custom/demo-img.jpg" class="img-fluid" alt="image">
-                            <span class="blog-date">February 8, 2022</span>
-                        </div>
-                        <div class="content">
-                            <h4><a href="error.html">Lorem, ipsum dolor sit amet consectetur adipisicing</a></h4>
-                            <a href="error.html" class="read-more-btn">Continue Reading<i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single1">
-                        <div class="image">
-                            <img src="~/assets/images/custom/demo-img.jpg" class="img-fluid" alt="image">
-                            <span class="blog-date">August 08, 2022</span>
-                        </div>
-                        <div class="content">
-                            <h4><a href="error.html">Lorem, ipsum dolor sit amet consectetur adipisicing</a>
-                            </h4>
-                            <a href="error.html" class="read-more-btn">Continue Reading<i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-10">
-                    <div class="blog-single1">
-                        <div class="image">
-                            <img src="~/assets/images/custom/demo-img.jpg" class="img-fluid" alt="image">
-                            <span class="blog-date">October 8, 2022</span>
-                        </div>
-                        <div class="content">
-                            <h4><a href="error.html">Lorem, ipsum dolor sit amet consectetur adipisicing</a>
-                            </h4>
-                            <a href="error.html" class="read-more-btn">Continue Reading<i
-                                    class="bi bi-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="text-center mt-5">
-            <a href="error.html" class="a-btn">All Blogs</a>
-        </div>
-    </div>
+   
 

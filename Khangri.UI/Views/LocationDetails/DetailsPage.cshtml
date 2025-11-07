@@ -1,0 +1,107 @@
+﻿@using Khangri.UI.Models
+@model LocationDetailsViewModel
+@{
+    ViewData["Title"] = "Khangri Tour & Trek";
+}
+@{
+    ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
+}
+
+
+<div class="inner-banner-section">
+    <img src="~/assets/images/bg/inner-banner-vctr.png" class="inner-banner-vector" alt="image">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-md-10 col-sm-12">
+                <div class="breadcrumb-area">
+                    <span>Destination Details</span>
+                    <h2>@Model.Location.Location</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="destination-details-section pt-120 pb-120">
+    <div class="container">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-10">
+                <div class="destination-details">
+                    <div class="desti-details-block">
+                        <h3>Destination Overview</h3>
+                        <p>
+                            @Model.Location.Description
+                        </p>
+                    </div>
+
+                    <div class="tour-package-section2 pt-20 pb-100">
+                        <div class="container">
+                            <div class="row justify-content-start align-items-center mb-60">
+                                <div class="col-md-12 text-md-start text-center">
+                                    <div class="section-title3 d-flex flex-column justify-content-center mb-0">
+                                        <span>sightseeing</span>
+                                        <h2>Attractions Of @Model.Location.Location</h2>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-4">
+                                    <div class="slider-arrows arrows-style-4 text-center d-md-flex d-none flex-row gap-5 justify-content-end align-items-center pt-1">
+                                        <div class="package2-prev swiper-prev-arrow" tabindex="0" role="button"
+                                             aria-label="Previous slide">
+                                            <i class="bi bi-arrow-left"></i>
+                                        </div>
+                                        <div class="package2-next swiper-next-arrow" tabindex="0" role="button" aria-label="Next slide">
+                                            <i class="bi bi-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="swiper package-slider2">
+                                        <div class="swiper-wrapper">
+
+                                            @{
+								                foreach(var item in Model.SightSeeing.OrderBy(si=>si.SightSeeing))
+								                {
+                                                    <div class="swiper-slide">
+                                                        <div class="tour-package-single2">
+                                                    <div class="image">
+                                                                <img src="@Url.Action("Image","SightSeeing",new{imageId=item.SightSeeingId})" class="img-fluid" alt="image">
+                                                        <span class="blog-date"><i class="bi bi-calendar-check"></i>sightseeing</span>
+                                                    </div>
+                                                    <div class="content">
+                                                                <h4><a href="">@item.SightSeeing</a></h4>
+                                                                <p>@item.Details</p>
+                                                        <!-- <a href="" class="read-more-btn sibling-2">Explorer Now<i
+                                                            class="bi bi-arrow-right"></i></a> -->
+                                                    </div>
+                                                </div>
+                                                    </div>
+
+                                                }
+                                            }
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="desti-details-block">
+                        <h3>View On Map :</h3>
+                        <div class="map-area">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d80119.47414987476!2d88.3999562368252!3d27.443907866344546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a56a5805eafb%3A0xa4c4b857c39b5a04!2sSikkim!5e0!3m2!1sen!2sin!4v1762255934850!5m2!1sen!2sin"
+                                    width="600" height="450" style="border:0;" allowfullscreen loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
