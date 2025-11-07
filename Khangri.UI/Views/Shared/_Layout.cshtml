@@ -116,19 +116,19 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="">Treks</a>
+                        <a href="@Url.Action("list","TrekDetails",new{tourId=0,tourTypeId=4})">Treks</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="">Gallery</a>
+                        <a href="@Url.Action("Gallery","Gallery")">Gallery</a>
                     </li>
                     
                     <li class="menu-item-has-children">
-                        <a href="">About</a>
+                        <a href="@Url.Action("About","Home")">About</a>
                     </li>
-                    <li><a href="">Contact Us</a></li>
+                    <li><a href="@Url.Action("Contact","ContactUs")">Contact Us</a></li>
 
-                    <li><a href="">Booking</a></li>
+                    <li><a href="@Url.Action("Reservation","Reservation")">Booking</a></li>
 
                 </ul>
 

@@ -63,7 +63,12 @@ namespace Khangri.UI.Controllers
         {
             return View();
         }
-        
+
+        public IActionResult About()
+        {
+            return View();
+        }
+
     }
 
 }
