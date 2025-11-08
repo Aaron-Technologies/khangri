@@ -71,6 +71,11 @@ header.style-2.t .main-nav ul li a {
   font-size: 5rem;
   text-transform: capitalize;
 }
+.banner-section2 .swiper-slide.client .banner2-content .descrip {
+  font-size: 1.7rem;
+  line-height: 21px;
+  letter-spacing: 1.2px;
+}
 
 .content p {
   font-size: 1.5rem !important;
