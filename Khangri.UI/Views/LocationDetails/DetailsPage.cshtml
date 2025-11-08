@@ -7,6 +7,13 @@
     ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
 }
 
+@section styles {
+    <style>
+        .inner-banner-vector{
+            z-index: 0 !important;
+        }
+    </style>
+}
 
 <div class="inner-banner-section">
     <img src="@Url.Action("image","Location",new{locationId=Model.Location.LocationId})" class="inner-banner-vector" alt="image">
