@@ -184,7 +184,7 @@ namespace Khangri.UI.Controllers
 
         [Route("[controller]/Edit")]
         [HttpPost]
-        public IActionResult Edit(SightSeeingViewModel viewModel)
+        public IActionResult Edit(EntitySightSeeing viewModel)
         {
 
             if (!ModelState.IsValid)
@@ -215,10 +215,7 @@ namespace Khangri.UI.Controllers
                 }
                 viewModel.ImageFile = Path.GetFileName(destFilePath);
             }
-            else
-            {
-                viewModel.ImageFile = String.Empty;
-            }
+            
             var msg = String.Empty;
             try
             {
@@ -265,7 +262,7 @@ namespace Khangri.UI.Controllers
                 };
                 ViewBag.Status = JsonSerializer.Serialize(status);
             }
-            return View();
+            return View(viewModel);
         }
         #endregion
 

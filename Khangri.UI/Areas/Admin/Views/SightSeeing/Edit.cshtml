@@ -66,7 +66,7 @@
                                            id="image-upload" accept="image/*">
                                 </div>
                                 @Html.ValidationMessageFor(m => m.ImageFile,null,new{@class="field-validation-valid text-danger"})
-
+                                
                             </div>
                         </div>
 
@@ -133,7 +133,7 @@
                     }
                 </div>
                 <div class="col-sm-6">
-                    <img src="~/images/no-image.jpg" id="previewimage" height="200" width="150" />
+                    <img src="@Url.Action("image","SightSeeing",new{imageId=Model.SightSeeingId})" id="previewimage" height="200" width="150" />
 
                 </div>
 
@@ -168,7 +168,7 @@
 
                 }
             });
-            $('#time').datepicker();
+            // $('#time').datepicker();
 
         @{
             var json = ViewBag.Status?.ToString();
