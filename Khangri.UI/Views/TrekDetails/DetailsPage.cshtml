@@ -7,7 +7,13 @@
     ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
 }
 
-
+@section styles {
+    <style>
+        .inner-banner-vector{
+            z-index: 0 !important;
+        }
+    </style>
+}
 
 <div class="inner-banner-section sibling-2">
     <img src="@Url.Action("image","Image",new{imageId=Model.Tours.M20_ImageId})" class="inner-banner-vector" alt="image">
@@ -131,7 +137,7 @@
 
                             <div class="row justify-content-center g-4">
                                 <div class="col-md-6 col-sm-10 ">
-                                    <div class="facility-single2">
+                                    <div class="facility-single2 text-start">
                                         <div class="facility-content">
                                             <h4>Inclusion</h4>
                                             <div class="alpine-info-wrap pb-0 mb-0">
@@ -141,7 +147,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-sm-10 ">
-                                    <div class="facility-single2">
+                                    <div class="facility-single2 text-start">
                                         <div class="facility-content">
                                             <h4>Exclusion</h4>
                                             <div class="alpine-info-wrap pb-0 mb-0">
