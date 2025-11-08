@@ -45,7 +45,7 @@ namespace Khangri.UI.Controllers
             return View(homeViewModel);
         }
 
-        public IActionResult LocatioList()
+        public IActionResult Gallery()
         {
             return View();
         }
