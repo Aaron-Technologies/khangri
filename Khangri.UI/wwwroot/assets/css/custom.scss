@@ -75,11 +75,18 @@ header.style-2.t .main-nav ul{
 
 
 .banner-section2 .swiper-slide.client{
-    &:before{
-        background-color: transparent !important;
-    }
-    .banner-bg11 {
-        animation: none !important;
+    // &:before{
+    //     background-color: transparent !important;
+    // }
+    // .banner-bg11 {
+    //     animation: none !important;
+    // }
+
+    .banner2-content{
+        h2{
+            font-size: 5rem;
+            text-transform: capitalize;
+        }
     }
 } 
 

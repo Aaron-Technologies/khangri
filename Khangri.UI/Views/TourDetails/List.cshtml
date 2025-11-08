@@ -37,7 +37,7 @@
                                 <img src="@Url.Action("image","Image",new{imageId=item.M20_ImageId})" class="img-fluid " alt="image">
                             </div>
                             <div class="content">
-                                    <h4><a href="tour-details.html">@item.TourName</a></h4>
+                                    <h4><a href="@Url.Action("DetailsPage","TourDetails",new{tourId=item.TourId})">@item.TourName</a></h4>
                                 <div class="best-plan-meta">
                                     <span class="duration"><i class="bi bi-clock"></i>@item.NoOfDays Days - @(item.NoOfDays - 1) Nights</span>
                                     <span class="rating"><i class="bi bi-geo-alt"></i> <i class="bi bi-briefcase-fill"></i><i class="bi bi-building"></i></span>
