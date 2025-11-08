@@ -7,6 +7,11 @@
     ViewData["Description"] = "Embark on unforgettable journeys with our premier tour and travel agency. Explore diverse destinations, create lasting memories, and book your next adventure today!";
 }
 
+@section styles {
+    <style>
+        
+    </style>
+}
 
 <div class="banner-section2">
     <div class="swiper banner2-slider">
@@ -25,7 +30,7 @@
                                 <div class="banner2-content text-center">
                                   <span>@item.Caption</span>
                                   <h2 class="">@item.Details1</h2>
-                                  <p class="">@item.Details2</p>
+                                  <p class="descrip">@item.Details2</p>
                                   <a href="@Url.Action("list","TourDetails")" class="eg-btn btn--primary btn--lg">Discover More</a>
                                 </div>
                               </div>
