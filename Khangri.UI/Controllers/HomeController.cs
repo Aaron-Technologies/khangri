@@ -79,6 +79,11 @@ namespace Khangri.UI.Controllers
         {
             return View();
         }
+
+        public IActionResult Error()
+        {
+            return View();
+        }
         
     }
 

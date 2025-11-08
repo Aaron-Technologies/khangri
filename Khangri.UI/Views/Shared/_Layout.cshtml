@@ -248,11 +248,10 @@
                         <div class="footer-item">
                             <h4>Information</h4>
                             <ul class="link-list">
-                                <li><a href="">About Company</a></li>
-                                <li><a href="">Online Query</a></li>
-                                <li><a href="">Become Partner</a></li>
-                                <li><a href="">Help & Support</a></li>
-                                <li><a href="">Contact</a></li>
+                                <li><a href="@Url.Action("about","Home",new{tourId=0,tourTypeId=2})">About Company</a></li>
+                                <li><a href="@Url.Action("booking","Home",new{tourId=0,tourTypeId=2})">Booking</a></li>
+                                <li><a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})">Packages</a></li>
+                                <li><a href="@Url.Action("contact","Home",new{tourId=0,tourTypeId=2})">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -260,11 +259,11 @@
                         <div class="footer-item">
                             <h4>Destinations</h4>
                             <ul class="link-list">
-                                <li><a href="">sikkim</a></li>
-                                <li><a href="">Darjeeling</a></li>
-                                <li><a href="">Nepal</a></li>
-                                <li><a href="">Bhutal</a></li>
-                                <li><a href="">Ladakh</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">sikkim</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Darjeeling</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Nepal</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Bhutan</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Ladakh</a></li>
                             </ul>
                         </div>
                     </div>
@@ -277,8 +276,8 @@
                                         <i class="bi bi-telephone"></i>
                                     </div>
                                     <div class="text">
-                                        <a href="tel:9474649449" target="_blank">94746-49449</a>
                                         <a href="tel:9832049994" target="_blank">98320-49994</a>
+                                        <a href="tel:9474649449" target="_blank">94746-49449</a>
                                     </div>
                                 </li>
                                 <li>
@@ -286,9 +285,7 @@
                                         <i class="bi bi-envelope"></i>
                                     </div>
                                     <div class="text">
-                                        <a href="mailto:khangritrek@yahoo.com" target="_blank">
-                                            <span class="__cf_email__">khangritrek@yahoo.com</span>
-                                        </a>
+                                        <a href="mailto:khangritrek@yahoo.com"><span class="__cf_email__">khangritrek@yahoo.com</span></a>
                                     </div>
                                 </li>
                                 <li>
@@ -296,7 +293,7 @@
                                         <i class="bi bi-geo-alt"></i>
                                     </div>
                                     <div class="text">
-                                        address, address line, sikkim
+                                        Khangri Building, Behind Axis Bank, M.G Marg, Gangtok East-Sikkim 737101
                                     </div>
                                 </li>
                             </ul>
@@ -308,10 +305,10 @@
                         class="col-lg-6 d-flex justify-content-lg-start justify-content-center align-items-center mb-lg-0 mb-5">
                         <h4>Stay Connected:</h4>
                         <ul class="footer-social">
-                            <li><a href=""><i class="bx bxl-facebook"></i></a></li>
-                            <li><a href=""><i class="bx bxl-twitter"></i></a></li>
-                            <li><a href=""><i class="bx bxl-instagram"></i></a></li>
-                            <li><a href=""><i class="bx bxl-pinterest"></i></a></li>
+                            <li><a href="https://www.facebook.com/profile.php?id=100071124199877#" target="_blank"><i class="bx bxl-facebook"></i></a></li>
+                            <li><a href="https://wa.me/8116762251?text=I'm%20interested%20in%20travelling" target="_blank"><i class="bx bxl-whatsapp"></i></a></li>
+                            @* <li><a href=""><i class="bx bxl-instagram"></i></a></li>
+                            <li><a href=""><i class="bx bxl-pinterest"></i></a></li> *@
                         </ul>
                     </div>
                     <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center align-items-center">
@@ -337,8 +334,8 @@
                     </div>
                     <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center align-items-center">
                         <ul class="f-bottom-list d-flex jusify-content-start align-items-center">
-                            <li><a href="">Privacy Policy</a></li>
-                            <li><a href="">Terms of Use</a></li>
+                            <li><a href="@Url.Action("error","Home")">Privacy Policy</a></li>
+                            <li><a href="@Url.Action("error","Home")">Terms of Use</a></li>
                         </ul>
                     </div>
                 </div>

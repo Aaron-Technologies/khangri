@@ -1,0 +1,22 @@
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Comming Soon";
+}
+
+ <div class="error-section pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-7 col-md-10 col-sm-12 text-center">
+          <div class="error-wrapper">
+            <div class="error-image">
+              <img src="~/assets/images/bg/coming.png" class="img-fluid" alt="image">
+            </div>
+            <div class="error-text">
+              <p>The page you are looking is in Progress</p>
+              <a href="@Url.Action("index","Home")" class="eg-btn btn--primary btn--lg">Back To Home</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
