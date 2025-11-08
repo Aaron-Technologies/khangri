@@ -8,8 +8,8 @@
 }
 
 
-<div class="inner-banner-section" >
-    <img src="~/assets/images/bg/inner-banner-vctr.png" class="inner-banner-vector" alt="image">
+<div class="inner-banner-section">
+    <img src="@Url.Action("image","Location",new{locationId=Model.Location.LocationId})" class="inner-banner-vector" alt="image">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-xl-8 col-md-10 col-sm-12">
