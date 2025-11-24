@@ -1,0 +1,168 @@
+﻿@using Khangri.UI.Models
+@model HomeViewModel
+
+
+
+
+@section Styles {
+    <style>
+      
+      @@media (max-width:800px){ .layout{grid-template-columns:1fr} .toc{order:2} }
+      .toc{
+        background:#fbfdff;border:1px solid #eef2f7;padding:14px;border-radius:10px;
+        position:sticky;top:18px;height:fit-content;
+      }
+      .toc h3{margin:0 0 8px;font-size:14px}
+      .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+      .toc a{color:var(--accent);text-decoration:none;font-size:14px}
+      .toc a:hover{text-decoration:underline}
+      article{padding:4px 6px}
+      section{margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid #f3f4f6}
+      section h2{font-size:16px;margin:0 0 8px}
+      section p{margin:0 0 8px;color:#333}
+      ul.bullets{padding-left:20px;margin:0 0 8px}
+      footer{margin-top:18px;padding-top:12px;color:var(--muted);font-size:13px;border-top:1px dashed #eef2f7}
+      .muted{color:var(--muted)}
+      .contact{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+      .badge{background:#eef2f7;padding:6px 8px;border-radius:6px;font-size:13px;color:#064e3b}
+      /* print */
+      @@media print{
+        body{padding:0;background:white}
+        .toc{display:none}
+        .container{box-shadow:none;border-radius:0;padding:0}
+      }
+      /* smooth scroll */
+      html{scroll-behavior:smooth}
+    </style>
+}
+
+
+<div class="feature-section2 pt-120">
+    <div class="container" role="main">
+    <header>
+      <div class="logo" aria-hidden="true">TA</div>
+      <div>
+        <h1>Terms &amp; Conditions</h1>
+        <p class="lead">These terms govern bookings, payments, cancellations and other matters for travel services provided by <strong>Khangri Tours & Treks</strong>.</p>
+      </div>
+    </header>
+
+    <div class="layout">
+      <!-- Table of Contents -->
+      <!-- Main article -->
+      <article>
+        <section id="acceptance" aria-labelledby="acceptance-heading">
+          <h2 id="acceptance-heading">1. Acceptance of these terms</h2>
+          <p>By using our website or booking services with <strong>Khangri Tours & Treks</strong>, you accept these Terms &amp; Conditions. Please read them carefully before making a booking.</p>
+        </section>
+
+        <section id="bookings" aria-labelledby="bookings-heading">
+          <h2 id="bookings-heading">2. Bookings &amp; confirmation</h2>
+          <p>All bookings can be made through our website, by email, or by phone. A booking becomes confirmed once we issue a booking confirmation and you have paid any required deposit or full amount.</p>
+          <ul class="bullets">
+            <li>Details in your confirmation (dates, hotel name, number of travellers, price) are your responsibility to check immediately.</li>
+            <li>We reserve the right to correct errors in any booking confirmation (for example pricing or typographical errors).</li>
+          </ul>
+        </section>
+
+        <section id="prices" aria-labelledby="prices-heading">
+          <h2 id="prices-heading">3. Prices &amp; payment</h2>
+          <p>Prices shown are in the currency stated. Prices may change before your booking is confirmed. Once confirmed, the price will not change except in limited circumstances set out below.</p>
+          <ul class="bullets">
+            <li><strong>Deposit:</strong> Some bookings require a non-refundable deposit to secure the reservation.</li>
+            <li><strong>Final payment:</strong> The balance is due by the date shown on your invoice or at least [X] days before travel.</li>
+            <li><strong>Methods:</strong> We accept payment by bank transfer, card, or other payment methods we list on the booking form.</li>
+            <li><strong>Late payment:</strong> Failure to pay on time may result in cancellation of your booking and loss of deposit.</li>
+          </ul>
+        </section>
+
+        <section id="changes" aria-labelledby="changes-heading">
+          <h2 id="changes-heading">4. Changes made by you</h2>
+          <p>If you want to change your booking after confirmation, we will try to help but cannot guarantee availability. Changes may be subject to additional charges from suppliers and an administrative fee.</p>
+        </section>
+
+        <section id="cancellation" aria-labelledby="cancellation-heading">
+          <h2 id="cancellation-heading">5. Cancellation &amp; refunds</h2>
+          <p>Your cancellation must be made in writing. Cancellation charges depend on the supplier's and our policy and may include:</p>
+          <ul class="bullets">
+            <li>Loss of deposit;</li>
+            <li>Partial or full cost of the services if within a supplier's cancellation window;</li>
+            <li>Any administrative fees we charge.</li>
+          </ul>
+          <p>We recommend purchasing travel insurance to cover cancellation costs.</p>
+        </section>
+
+        <section id="travel-docs" aria-labelledby="travel-docs-heading">
+          <h2 id="travel-docs-heading">6. Passports, visas &amp; health</h2>
+          <p>It is your responsibility to ensure you and your party have valid passports, visas, and meet any health entry requirements (vaccinations, tests). We are not responsible if you are denied boarding or entry due to missing or invalid documents.</p>
+        </section>
+
+        <section id="insurance" aria-labelledby="insurance-heading">
+          <h2 id="insurance-heading">7. Travel insurance</h2>
+          <p>We strongly recommend that all travellers have adequate travel insurance covering personal injury, medical costs, cancellation, and theft. It is your responsibility to obtain this before travel.</p>
+        </section>
+
+        <section id="liability" aria-labelledby="liability-heading">
+          <h2 id="liability-heading">8. Our liability</h2>
+          <p>We act as an agent for hotels, transport providers and other suppliers. We are not liable for the acts or omissions of those suppliers except where required by law.</p>
+          <p>To the maximum extent permitted by law, our liability for any loss, damage or injury is limited to the value of the booking or the insurance proceeds available.</p>
+        </section>
+
+        <section id="force-majeure" aria-labelledby="force-majeure-heading">
+          <h2 id="force-majeure-heading">9. Force majeure</h2>
+          <p>We are not liable for any failure or delay caused by events beyond our reasonable control (natural disasters, strikes, war, pandemics, government action, supplier failure, etc.). In such events we will try to offer alternatives but may need to cancel or change arrangements.</p>
+        </section>
+
+        <section id="intellectual" aria-labelledby="intellectual-heading">
+          <h2 id="intellectual-heading">10. Intellectual property</h2>
+          <p>All content on our website (text, images, logos) is our property or used with permission. You may not reproduce or use our content for commercial purposes without written permission.</p>
+        </section>
+
+        <section id="data" aria-labelledby="data-heading">
+          <h2 id="data-heading">11. Data protection &amp; privacy</h2>
+          <p>We will process your personal data to provide travel services and comply with legal obligations. Our <a href="/privacy-policy" aria-label="Privacy policy">Privacy Policy</a> explains how we collect, use and store your information.</p>
+        </section>
+
+        <section id="complaints" aria-labelledby="complaints-heading">
+          <h2 id="complaints-heading">12. Complaints</h2>
+          <p>If you have a complaint while travelling, please tell our local supplier and contact us immediately so we can help resolve the issue. For formal complaints after travel, contact us in writing within [X] days of the end of the service.</p>
+        </section>
+
+        <section id="law" aria-labelledby="law-heading">
+          <h2 id="law-heading">13. Governing law</h2>
+          <p>These Terms &amp; Conditions are governed by the laws of <strong>Sikkim, India</strong>. Any disputes will be subject to the exclusive jurisdiction of the courts of that place.</p>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+         
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
+
+
+
+@section scripts {
+      <!-- Optional small script: highlight TOC entry when scrolling -->
+      <script>
+        // Simple scrollspy
+        (function(){
+          const sections = Array.from(document.querySelectorAll('article section[id]'));
+          const links = Array.from(document.querySelectorAll('.toc a'));
+          function onScroll(){
+            const top = window.scrollY + 120; // offset
+            let current = sections[0].id;
+            for(let s of sections){
+              if(s.offsetTop <= top) current = s.id;
+            }
+            links.forEach(a => a.style.fontWeight = (a.getAttribute('href') === '#' + current) ? '600' : '400');
+          }
+          window.addEventListener('scroll', onScroll, {passive:true});
+          onScroll();
+        })();
+      </script>
+  }
+
+
+

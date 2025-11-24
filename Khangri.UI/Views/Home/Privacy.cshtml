@@ -1,0 +1,152 @@
+﻿@using Khangri.UI.Models
+@model HomeViewModel
+
+
+
+
+@section Styles {
+    <style>
+     
+      
+      .layout{}
+      @@media (max-width:800px){ .layout{grid-template-columns:1fr} .toc{order:2} }
+      .toc{
+        background:#fbfdff;border:1px solid #eef2f7;padding:14px;border-radius:10px;
+        position:sticky;top:18px;height:fit-content;
+      }
+      .toc h3{margin:0 0 8px;font-size:14px}
+      .toc ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px}
+      .toc a{color:var(--accent);text-decoration:none;font-size:14px}
+      .toc a:hover{text-decoration:underline}
+      article{padding:4px 6px}
+      section{margin-bottom:18px;padding-bottom:8px;border-bottom:1px solid #f3f4f6}
+      section h2{font-size:16px;margin:0 0 8px}
+      section p{margin:0 0 8px;color:#333}
+      ul.bullets{padding-left:20px;margin:0 0 8px}
+      footer{margin-top:18px;padding-top:12px;color:var(--muted);font-size:13px;border-top:1px dashed #eef2f7}
+      .muted{color:var(--muted)}
+      .contact{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+      .badge{background:#eef2f7;padding:6px 8px;border-radius:6px;font-size:13px;color:#064e3b}
+      /* print */
+      @@media print{
+        body{padding:0;background:white}
+        .toc{display:none}
+        .container{box-shadow:none;border-radius:0;padding:0}
+      }
+      /* smooth scroll */
+      html{scroll-behavior:smooth}
+    </style>
+}
+
+<div class="feature-section2 pt-120">
+    <div class="container" role="main">
+        <header>
+          <h1>Privacy Policy</h1>
+          <p class="lead">This Privacy Policy explains how we collect, use, and protect your personal information when you use our travel services.</p>
+        </header>
+
+        <article>
+          <section id="intro">
+            <h2>1. Introduction</h2>
+            <p>We at <strong>Khangri Tours & Treks</strong> are committed to protecting your privacy. This policy describes what data we collect, how we use it, and your rights.</p>
+          </section>
+
+          <section id="information">
+            <h2>2. Information We Collect</h2>
+            <p>We collect the following types of information for booking and service purposes:</p>
+            <ul>
+              <li>Your name, email address, phone number, and address</li>
+              <li>Travel preferences, travel history, and booking details</li>
+              <li>Payment information (processed securely through third-party gateways)</li>
+              <li>Passport, visa, or ID details for travel arrangements</li>
+              <li>Website usage data through cookies</li>
+            </ul>
+          </section>
+
+          <section id="usage">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your information to:</p>
+            <ul>
+              <li>Process bookings and travel arrangements</li>
+              <li>Send confirmation emails, invoices, and updates</li>
+              <li>Improve our website and services</li>
+              <li>Provide customer support</li>
+              <li>Comply with legal requirements</li>
+            </ul>
+          </section>
+
+          <section id="sharing">
+            <h2>4. Sharing Your Information</h2>
+            <p>We may share your information with:</p>
+            <ul>
+              <li>Hotels, airlines, and travel service partners</li>
+              <li>Payment gateway providers</li>
+              <li>Government authorities (passport/visa verification) when required</li>
+              <li>Third-party service providers who assist with our operations</li>
+            </ul>
+            <p>We do not sell or rent your personal information to anyone.</p>
+          </section>
+
+          <section id="security">
+            <h2>5. Data Security</h2>
+            <p>We use reasonable administrative and technical measures to protect your personal data. However, no online transmission is 100% secure, so we cannot guarantee absolute safety.</p>
+          </section>
+
+          <section id="cookies">
+            <h2>6. Cookies & Tracking</h2>
+            <p>Our website uses cookies to improve user experience and track website performance. You may disable cookies in your browser settings.</p>
+          </section>
+
+          <section id="rights">
+            <h2>7. Your Rights</h2>
+            <p>You have the right to:</p>
+            <ul>
+              <li>Access your personal data</li>
+              <li>Request correction of incorrect or incomplete data</li>
+              <li>Request deletion of your information (subject to legal requirements)</li>
+              <li>Withdraw consent for marketing communication</li>
+            </ul>
+          </section>
+
+          <section id="thirdparty">
+            <h2>8. Third-Party Links</h2>
+            <p>Our website may contain links to third-party websites. We are not responsible for their privacy practices or content.</p>
+          </section>
+
+          <section id="updates">
+            <h2>9. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with the updated date.</p>
+          </section>
+
+          <section id="contact">
+           
+          </section>
+        </article>
+    </div>
+</div>
+
+
+
+@section scripts {
+      <!-- Optional small script: highlight TOC entry when scrolling -->
+      <script>
+        // Simple scrollspy
+        (function(){
+          const sections = Array.from(document.querySelectorAll('article section[id]'));
+          const links = Array.from(document.querySelectorAll('.toc a'));
+          function onScroll(){
+            const top = window.scrollY + 120; // offset
+            let current = sections[0].id;
+            for(let s of sections){
+              if(s.offsetTop <= top) current = s.id;
+            }
+            links.forEach(a => a.style.fontWeight = (a.getAttribute('href') === '#' + current) ? '600' : '400');
+          }
+          window.addEventListener('scroll', onScroll, {passive:true});
+          onScroll();
+        })();
+      </script>
+  }
+
+
+

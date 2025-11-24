@@ -80,6 +80,15 @@ namespace Khangri.UI.Controllers
             return View();
         }
 
+        public IActionResult Terms()
+        {
+            return View();
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View();
