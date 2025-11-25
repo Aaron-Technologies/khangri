@@ -198,7 +198,7 @@
                                     <div class="review-area">
                                         <p><i class="fas fa-map-marker-alt"></i> <span class="fw-bold">@item.Altitude</span>  Feet</p>
                                     </div>
-                                    <h5>TAG LINE</h5>
+                                    <h5>@item.Caption</h5>
                                     <h4><a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">@item.Location</a></h4>
 
                                     <a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})" class="eg-btn btn--primary-outline btn--md">Explore Now</a>
