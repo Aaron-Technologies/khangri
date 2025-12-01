@@ -1,0 +1,123 @@
+﻿@using Khangri.UI.Models
+@model HomeViewModel
+
+
+
+
+@section Styles {
+    <style>
+      .payment-policy {
+        background: #fff;
+        border-radius: 8px;
+        padding: 28px;
+        box-shadow: 0 6px 18px rgba(33,33,33,0.06);
+        color: #222;
+        
+        line-height: 1.6;
+      }
+      .payment-policy h1 { margin-bottom: 6px; color: #0b5; }
+      .payment-policy h2 {  margin-top: 18px; margin-bottom: 8px; color: #0a3; }
+      .payment-policy p { margin: 0 0 10px; }
+      .policy-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      @@media (min-width: 880px) {
+        .policy-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .policy-box {
+        background: #fbfbfb;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 6px;
+      }
+      .policy-list { margin: 0; padding-left: 1.15rem; }
+      .muted { color: #666;  }
+      .note {  color: #555; margin-top: 8px; }
+    </style>
+}
+
+
+<div class="feature-section2 pt-120">
+    <div class="container" role="main">
+    <article class="payment-policy" role="region" aria-labelledby="payment-policy-heading">
+      <h1 id="payment-policy-heading">Payment Policy</h1>
+      <p class="muted">This policy explains how payments, refunds and related charges are handled for tour bookings. By booking with us you agree to these terms.</p>
+
+      <div class="policy-grid" role="list">
+        <section class="policy-box" role="listitem" aria-labelledby="accepted-heading">
+          <h2 id="accepted-heading">Accepted payment methods</h2>
+          <ul class="policy-list">
+            <li>Major credit & debit cards (Visa, MasterCard, American Express)</li>
+            <li>Bank transfer / wire</li>
+            <li>Online wallets and payment gateways (PayPal, Stripe, etc.)</li>
+            <li>In-person card/cash payments at our office where available</li>
+          </ul>
+          <p class="note">Some methods may incur additional processing fees applied by the payment provider.</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="schedule-heading">
+          <h2 id="schedule-heading">Payment schedule</h2>
+          <ul class="policy-list">
+            <li>Deposit required to confirm most bookings (typically 20–30% of total).</li>
+            <li>Remaining balance due no later than 14–30 days before departure (varies by tour).</li>
+            <li>Full payment required at time of booking for last-minute bookings or special offers.</li>
+          </ul>
+          <p class="note">If a balance is not received by the due date we may cancel the booking and apply cancellation fees.</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="refund-heading">
+          <h2 id="refund-heading">Cancellations & refunds</h2>
+          <ul class="policy-list">
+            <li>Refunds depend on the tour's cancellation terms — refundable, partially refundable, or non-refundable.</li>
+            <li>Cancellation fees may apply and increase closer to the departure date.</li>
+            <li>Refunds are issued to the original payment method after reconciliation and typically take 7–21 business days.</li>
+          </ul>
+          <p class="note">Refund processing times are subject to the issuing bank or payment provider.</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="fees-heading">
+          <h2 id="fees-heading">Pricing, taxes & extra fees</h2>
+          <ul class="policy-list">
+            <li>Prices shown include listed inclusions; local taxes and government fees may apply.</li>
+            <li>Currency conversions for card payments are performed by your bank and may include foreign‑exchange fees.</li>
+            <li>Service or booking fees (if any) will be displayed at checkout.</li>
+          </ul>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="security-heading">
+          <h2 id="security-heading">Security & data handling</h2>
+          <p class="muted">All online payments are processed through PCI‑compliant third‑party providers. We do not store full credit card numbers on our servers. Payment pages are encrypted (HTTPS).</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="docs-heading">
+          <h2 id="docs-heading">Invoices & receipts</h2>
+          <p class="muted">A confirmation and tax invoice will be emailed after each successful payment. You can also download invoices from your account dashboard.</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="changes-heading">
+          <h2 id="changes-heading">Changes & upgrades</h2>
+          <p class="muted">Changes to bookings may require payment of any applicable price difference and additional amendment fees. Availability is subject to confirmation.</p>
+        </section>
+
+        <section class="policy-box" role="listitem" aria-labelledby="support-heading">
+          <h2 id="support-heading">Questions or disputes</h2>
+          <p class="muted">If you have questions about a charge or need help with refunds, contact our support team with your booking reference and payment receipts. Before filing a chargeback, please contact us so we can resolve the issue.</p>
+        </section>
+      </div>
+    </article>
+   </div>
+</div>
+
+
+
+@section scripts {
+      <!-- Optional small script: highlight TOC entry when scrolling -->
+      <script>
+        
+      </script>
+  }
+
+
+

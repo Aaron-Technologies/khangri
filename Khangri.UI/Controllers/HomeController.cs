@@ -89,6 +89,14 @@ namespace Khangri.UI.Controllers
             return View();
         }
 
+        public IActionResult Cancellation()
+        {
+            return View();
+        }
+        public IActionResult Payment()
+        {
+            return View();
+        }
         public IActionResult Error()
         {
             return View();

@@ -31,7 +31,7 @@
                                   <span>@item.Caption</span>
                                   <h2 class="">@item.Details1</h2>
                                   <p class="descrip">@item.Details2</p>
-                                  <a href="@Url.Action("list","TourDetails")" class="eg-btn btn--primary btn--lg">Discover More</a>
+                                  @* <a href="@Url.Action("list","TourDetails")" class="eg-btn btn--primary btn--lg">Discover More</a> *@
                                 </div>
                               </div>
                             </div>
@@ -111,65 +111,90 @@
     </div> *@
 @* ***************************************************** Previous Banner**************************************************** *@
 
-
-    <div class="category-section pt-120 pb-120">
+ <div class="counter-section pb-120">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-8 col-md-10 text-center">
-                    <div class="section-title1">
-                        <span>Travel Category</span>
-                        <h2>Our Popular Tours Type</h2>
-                        <img src="~/assets/images/icons/section-title-vector.svg" class="img-fluid" alt="image">
-                    </div>
-                </div>
-            </div>
-            <div
-                class="row row-cols-xl-6 row-cols-lg-4 row-cols-md-4 row-cols-sm-3 row-cols-2 justify-content-center g-xxl-5 g-4">
-                <div class="col">
-                    <div class="category-single1">
-                        <div class="icon">
-                            <img src="~/assets/images/icons/adventure.svg" alt="image">
-                        </div>
-                        <div class="content">
-                            <h4>Adventure</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="category-single1">
-                        <div class="icon">
-                            <img src="~/assets/images/icons/city-tour.svg" alt="image">
-                        </div>
-                        <div class="content">
-                            <h4>Sikkim Tour</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col">
-                    <div class="category-single1">
-                        <div class="icon">
-                            <img src="~/assets/images/icons/wedding.svg" alt="image">
-                        </div>
-                        <div class="content">
-                            <h4>Honeymoon</h4>
-                        </div>
-                    </div>
-                </div>
-               
-                <div class="col">
-                    <div class="category-single1">
-                        <div class="icon">
-                            <img src="~/assets/images/icons/travel.svg" alt="image">
-                        </div>
-                        <div class="content">
-                            <h4>Travel</h4>
-                        </div>
-                    </div>
+            <div class="counter-wrapper">
+                <div class="row g-2 d-flex justify-content-center">
+                    @{
+                        foreach (var item in Model.Counters.Where(t=>t.IsActive==true))
+                        {
+                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
+                                <div class="counter-single text-center d-flex flex-column hover-border1">
+                                    <div class="counter-icon">
+                                        <i class="@item.Icon w-100 fa-2x text-success"></i>
+                                    </div>
+                                    <div class="coundown d-flex flex-column">
+                                        <div class="d-flex flex-row justify-content-center align-items-center gap-2">
+                                            <h3 class="odometer" data-odometer-final="@item.Value">01</h3><i class="bi bi-plus-lg"></i>
+                                        </div>
+                                        <p>@item.Title</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
                 </div>
             </div>
         </div>
     </div>
+
+    @* <div class="category-section pt-120 pb-120">
+                <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-6 col-lg-8 col-md-10 text-center">
+                                <div class="section-title1">
+                                    <span>Travel Category</span>
+                                    <h2>Our Popular Tours Type</h2>
+                                    <img src="~/assets/images/icons/section-title-vector.svg" class="img-fluid" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-cols-xl-6 row-cols-lg-4 row-cols-md-4 row-cols-sm-3 row-cols-2 justify-content-center g-xxl-5 g-4">
+                            <div class="col">
+                                <div class="category-single1">
+                                    <div class="icon">
+                                        <img src="~/assets/images/icons/adventure.svg" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <h4>Adventure</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="category-single1">
+                                    <div class="icon">
+                                        <img src="~/assets/images/icons/city-tour.svg" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <h4>Sikkim Tour</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col">
+                                <div class="category-single1">
+                                    <div class="icon">
+                                        <img src="~/assets/images/icons/wedding.svg" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <h4>Honeymoon</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                            <div class="col">
+                                <div class="category-single1">
+                                    <div class="icon">
+                                        <img src="~/assets/images/icons/travel.svg" alt="image">
+                                    </div>
+                                    <div class="content">
+                                        <h4>Travel</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>          
+                </div>
+    </div> *@
 
     <div class="deal-section pb-120">
         <div class="container">
@@ -222,7 +247,7 @@
                 <div class="col-xl-8 col-lg-10 col-md-10 text-center">
                     <div class="section-title1">
                         <span>Choose Your's</span>
-                        <h2>Popular Tours</h2>
+                        <h2>Popular Trekkings</h2>
                         <img src="~/assets/images/icons/section-title-vector.svg" alt="image">
                     </div>
                 </div>
@@ -289,7 +314,7 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <a href="@Url.Action("list","TourDetails")" class="a-btn">All Tours</a>
+                        <a href="@Url.Action("list","TourDetails")" class="a-btn">All Trekkings</a>
                     </div>
                 </div>
             </div>
@@ -326,8 +351,8 @@
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
                     <div class="section-title1 text-center d-flex flex-column justify-content-center">
-                        <span>We are always striving for excellence</span>
-                        <h2> TREKS & ADVENTURES</h2>
+                        <span>PEAK CLIMBING IN SIKKIM</span>
+                        <h2> EXPEDITIONS </h2>
                     </div>
                 </div>
             </div>
@@ -362,7 +387,7 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="@Url.Action("list","TrekDetails")" class="a-btn">All Treks</a>
+                <a href="@Url.Action("list","TrekDetails")" class="a-btn">All EXPEDITIONS</a>
             </div>
         </div>
     </div>
@@ -404,32 +429,7 @@
         </div>
     </div> -->
 
-    <div class="counter-section pb-120">
-        <div class="container">
-            <div class="counter-wrapper">
-                <div class="row g-2 d-flex justify-content-center">
-                    @{
-                        foreach (var item in Model.Counters.Where(t=>t.IsActive==true))
-                        {
-                            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-10">
-                                <div class="counter-single text-center d-flex flex-column hover-border1">
-                                    <div class="counter-icon">
-                                        <i class="@item.Icon w-100 fa-2x text-success"></i>
-                                    </div>
-                                    <div class="coundown d-flex flex-column">
-                                        <div class="d-flex flex-row justify-content-center align-items-center gap-2">
-                                            <h3 class="odometer" data-odometer-final="@item.Value">01</h3><i class="bi bi-plus-lg"></i>
-                                        </div>
-                                        <p>@item.Title</p>
-                                    </div>
-                                </div>
-                            </div>
-                        }
-                    }
-                </div>
-            </div>
-        </div>
-    </div>
+   
 
    
    

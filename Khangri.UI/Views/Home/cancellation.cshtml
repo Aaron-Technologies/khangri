@@ -1,0 +1,92 @@
+﻿@using Khangri.UI.Models
+@model HomeViewModel
+
+
+
+
+@section Styles {
+    <style>
+      .payment-policy {
+        background: #fff;
+        border-radius: 8px;
+        padding: 28px;
+        box-shadow: 0 6px 18px rgba(33,33,33,0.06);
+        color: #222;
+
+        line-height: 1.6;
+      }
+      .payment-policy h1 { margin-bottom: 6px; color: #0b5; }
+      .payment-policy h2 { margin-top: 18px; margin-bottom: 8px; color: #0a3; }
+      .payment-policy p { margin: 0 0 10px; }
+      .policy-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      @@media (min-width: 880px) {
+        .policy-grid { grid-template-columns: 1fr 1fr; }
+      }
+      .policy-box {
+        background: #fbfbfb;
+        border: 1px solid #eee;
+        padding: 14px;
+        border-radius: 6px;
+      }
+      .policy-list { margin: 0; padding-left: 1.15rem; }
+      .muted { color: #666;  }
+      .note {  color: #555; margin-top: 8px; }
+    </style>
+}
+
+
+<div class="feature-section2 pt-120">
+    <div class="container" role="main">
+    <div class="payment-policy" role="region" aria-labelledby="cancellation-policy-title">
+      <h1 id="cancellation-policy-title">Cancellation & Refund Policy</h1>
+      <p class="muted">Effective date: <strong></strong></p>
+
+      <p>We know plans can change. This policy explains cancellation deadlines, applicable fees and how refunds are processed for tours booked on our site.</p>
+
+      <h2>Cancellation deadlines & fees</h2>
+      <div class="policy-grid">
+        <div class="policy-box">
+          <h3>More than 30 days before departure</h3>
+          <p>Full refund of the tour price, minus any non‑refundable booking or transaction fees.</p>
+        </div>
+        <div class="policy-box">
+          <h3>7–30 days before departure</h3>
+          <p>50% refund of the tour price. Any supplier fees may still apply.</p>
+        </div>
+        <div class="policy-box">
+          <h3>Less than 7 days before departure</h3>
+          <p>No refund. Changes or cancellations within 7 days are treated as no‑show unless otherwise stated.</p>
+        </div>
+        <div class="policy-box">
+          <h3>Partial use / no‑show</h3>
+          <p>No refund is provided for unused services. Transfers to alternate dates are subject to availability and extra charges.</p>
+        </div>
+      </div>
+
+      <h2>How to cancel</h2>
+      <ol class="policy-list">
+        <li>Contact our support team with your booking reference — email: <strong><a href="mailto:khangritrek@yahoo.com" target="_blank">khangritrek@yahoo.com</a></strong> or phone: <strong> <a  href="tel:+918116762251" target="_blank">+91 81167-62251</a> / <a  href="tel:9474649449" target="_blank">+91 94746-49449</a></strong>.</li>
+        <li>Provide booking details and request confirmation of cancellation.</li>
+        <li>Refunds, when due, are processed within 7–14 business days to the original payment method.</li>
+      </ol>
+
+      <p class="note">Third‑party supplier terms (airlines, hotels, local operators) may impose different fees or restrictions. We strongly recommend purchasing travel insurance to cover cancellations for personal reasons, illness or unforeseen events.</p>
+    </div>
+   </div>
+</div>
+
+
+
+@section scripts {
+      <!-- Optional small script: highlight TOC entry when scrolling -->
+      <script>
+        
+      </script>
+  }
+
+
+
