@@ -37,7 +37,13 @@
     <link rel="stylesheet" href="~/assets/css/default.css">
     <link rel="stylesheet" href="~/assets/css/custom.css">
 
-		@await RenderSectionAsync("Styles", required: false)
+	@await RenderSectionAsync("Styles", required: false)
+
+    <style>
+        .recognized img {
+            height: 62px;
+        }   
+    </style>
 
 </head>
 
@@ -101,23 +107,34 @@
                         <i class="bi bi-x-lg text-dark"></i>
                     </div>
                 </div>
+
+
+
                 <ul class="menu-list">
                     <li class="menu-item-has-children">
                         <a href="/" class="drop-down">Home</a>
-                       
                     </li>
+                    
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","LocationDetails")" class="drop-down">Destination</a>
-                       
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})">Tours</a>
+                        <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})">Trekking</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","TrekDetails",new{tourId=0,tourTypeId=4})">Treks</a>
+                        <a href="@Url.Action("","",new{tourId=0,tourTypeId=2})">Tours</a>
                     </li>
 
+                    <li class="menu-item-has-children">
+                        <a href="@Url.Action("list","TrekDetails")">Expedition</a>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                        <a href="@Url.Action("","")">Upcoming</a>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                        <a href="@Url.Action("","")">Accomodations</a>          
+                    </li>
+                    
                     <li class="menu-item-has-children">
                         <a href="@Url.Action("Gallery","Home")">Gallery</a>
                     </li>
@@ -125,10 +142,7 @@
                     <li class="menu-item-has-children">
                         <a href="@Url.Action("About","Home")">About</a>
                     </li>
-                    <li><a href="@Url.Action("Contact","Home")">Contact Us</a></li>
-
-                    <li><a href="@Url.Action("Booking","Home")">Booking</a></li>
-
+                    <li><a href="@Url.Action("","")">Blog</a></li>
                 </ul>
 
                 <div class="phone-call sibling2 d-flex justify-content-start align-items-center flex-row d-lg-none d-block mt-5">
@@ -223,20 +237,21 @@
     <div class="container">
       <div class="row">
         <div class="col-md-7">
-          <div class="recognized">
-            <h3 class="fw-bold">We are a Member of and Recognized by</h3>
-            <a title="Ministry of Tourism, Govt. of India" <img src="~/assets/images/custom/client/mot.jpg" alt="Ministry of Tourism"></a> 
-            <a title="Kathmandu Environmental Education   Project (KEEP)"><img src="~/assets/images/custom/client/keep.gif"></a>
-            <a title="Travel Agent Assocation of Sikkim (TAAS)"><img src="~/assets/images/custom/client/taas-logo.png"></a>
-            <a title="Eco Tourism Conservation Society of   Sikkim (ECOSS)"><img src="~/assets/images/custom/client/ecoss.gif"></a>
-            <a title="Sikkim Tourism, Govt. of Sikkim"><img src="~/assets/images/custom/client/sikkim-tourism-logo.jpg"></a>
-            <a title="International Trade Council"><img src="~/assets/images/custom/client/international_trade_council.jpg"></a><!--<a title="Travel Life"><img src="~/assets/images/custom/client/travellife.jpg"></a>--></div>
+            <div class="recognized">
+                <h3 class="fw-bold">We are a Member of and Recognized by</h3>
+                <a title="" <img src="~/assets/images/custom/client/mot.jpg" alt="Ministry of Tourism"></a> 
+                <a title=""><img src="~/assets/images/custom/client/1.jpeg"></a>
+                <a title=""><img src="~/assets/images/custom/client/2.jpeg"></a>
+                <a title=""><img src="~/assets/images/custom/client/3.jpeg"></a>
+                <a title=""><img src="~/assets/images/custom/client/4.jpeg"></a>
+                <a title=""><img src="~/assets/images/custom/client/5.jpeg"></a>
+            </div>
         </div>
         <div class="col-md-2 recognized tripad-btm">
-          <a target="_blank" href="https://www.tripadvisor.in/Tourism-g3538118-Kangri_Haridwar_Haridwar_District_Uttarakhand-Vacations.html">
+          @* <a target="_blank" href="https://www.tripadvisor.in/Tourism-g3538118-Kangri_Haridwar_Haridwar_District_Uttarakhand-Vacations.html">
                 <img src="~/assets/images/custom/client/tripadvisor_adarsh.png" title="Khangri Tour & Trek Reviews on TripAdvisor" alt="TripAdvisor Reviews">
-          </a>
-          </div>
+          </a> *@
+        </div>
         <div class="col-md-3">
           <div class="recognized">
             <h3 class="fw-bold">Acceptable Payment Methods</h3>
@@ -381,7 +396,7 @@
 
 
 
-	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="~/assets/js/jquery-3.6.0.min.js"></script>
   <script src="~/assets/js/jquery-ui.js"></script>
   <script src="~/assets/js/bootstrap.bundle.min.js"></script>
