@@ -120,16 +120,19 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","LocationDetails")" class="drop-down">Destination</a>
-                       
+                        <a href="@Url.Action("","",new{tourId=0,tourTypeId=2})">Tours</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})">Tours</a>
+                        <a href="@Url.Action("list","TrekDetails")">Expedition</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("list","TrekDetails",new{tourId=0,tourTypeId=4})">Treks</a>
+                        <a href="@Url.Action("","")">Upcoming</a>
+                    </li>
+
+                    <li class="menu-item-has-children">
+                        <a href="@Url.Action("","")">Accomodations</a>          
                     </li>
                     
                     <li class="menu-item-has-children">
@@ -139,10 +142,7 @@
                     <li class="menu-item-has-children">
                         <a href="@Url.Action("About","Home")">About</a>
                     </li>
-                    <li><a href="@Url.Action("Contact","Home")">Contact Us</a></li>
-
-                    <li><a href="@Url.Action("Booking","Home")">Booking</a></li>
-
+                    <li><a href="@Url.Action("","")">Blog</a></li>
                 </ul>
 
                 <div class="phone-call sibling2 d-flex justify-content-start align-items-center flex-row d-lg-none d-block mt-5">
