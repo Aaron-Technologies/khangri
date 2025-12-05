@@ -120,7 +120,7 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("","",new{tourId=0,tourTypeId=2})">Tours</a>
+                        <a href="@Url.Action("list","LocationDetails")">Tours</a>
                     </li>
 
                     <li class="menu-item-has-children">
@@ -132,7 +132,7 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("","")">Accomodations</a>          
+                        <a href="@Url.Action("Accomodation","Home")">Accomodations</a>          
                     </li>
                     
                     <li class="menu-item-has-children">
@@ -308,13 +308,12 @@
                     <div class="col-lg-3 col-md-4 col-sm-6 d-flex justify-content-lg-center">
                         <div class="footer-item">
                             <h4>Destinations</h4>
-                            
+                           
                             <ul class="link-list">
                                 <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Sikkim</a></li>
                                 <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Darjeeling</a></li>
-                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Himachal</a></li>
-                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Uttarkhand</a></li>
                                 <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Ladakh</a></li>
+                                <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Northeast</a></li>
                                 <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Nepal</a></li>
                                 <li><a href="@Url.Action("list","LocationDetails",new{tourId=0,tourTypeId=2})">Bhutan</a></li>
                             </ul>
@@ -395,11 +394,10 @@
     </footer>
 
 
-
-<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
   <script src="~/assets/js/jquery-3.6.0.min.js"></script>
   <script src="~/assets/js/jquery-ui.js"></script>
   <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+  @* <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="" crossorigin="anonymous"></script> *@
   <script src="~/assets/js/swiper-bundle.min.js"></script>
   <script src="~/assets/js/jquery.nice-select.js"></script>
   <script src="~/assets/js/odometer.min.js"></script>
