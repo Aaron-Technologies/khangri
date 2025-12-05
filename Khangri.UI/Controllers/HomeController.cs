@@ -101,6 +101,12 @@ namespace Khangri.UI.Controllers
         {
             return View();
         }
+
+        public IActionResult Accomodation()
+        {
+            return View();
+        }
+        
         
     }
 

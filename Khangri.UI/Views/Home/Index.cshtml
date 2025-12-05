@@ -323,16 +323,50 @@
 
     <div class="video-section mt-120">
         <div class="container">
-            <div class="row justify-content-center align-items-center g-4">
+            <div class="row justify-content-start align-items-center g-4">
                 <div class="col-lg-7 col-md-12">
                     <div class="video-section-content">
                         <span>Feel The Vibe</span><img src="~/assets/images/icons/fly-shape1.svg" alt="image">
-                        <h2>Take a Break & Checkout Our Top Destinations</h2>
-                        <p class="para">Khangri Tours & Treks, a leading inbound tour operating company registered and recognized by the Department of Tourism, Govt. of Sikkim, with coordinating counterparts in neighbouring countries like Nepal, Bhutan, and within India for our movements, also welcomes educational travelers working on projects such as a 
-                        bachelorarbeit to explore the region’s rich cultural and natural heritage.</p>
-                        <a href="@Url.Action("list","LocationDetails")" class="eg-btn btn--primary btn--lg">Discover More</a>
+                        <h2>Take a Break & Checkout Our Upcoming Destinations</h2>
+                        @* <p class="para">
+                                Khangri Tours & Treks, a leading inbound tour operating company registered and recognized by the Department of 
+                                Tourism, Govt. of Sikkim, with coordinating counterparts in neighbouring countries like Nepal, Bhutan, and within India for 
+                                our movements, also welcomes educational travelers working on projects such as a 
+                                bachelorarbeit to explore the region’s rich cultural and natural heritage.
+                        </p>
+                        <a href="@Url.Action("list","LocationDetails")" class="eg-btn btn--primary btn--lg">Discover More</a> *@
                     </div>
                 </div>
+
+                <div class="col-12 d-none">
+                    <div class="swiper trip-category-slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="trip-category-single">
+                                    <div class="trip-image">
+                                        <img src="~/assets/images/bg/trip-img1.png" class="img-fluid" alt="image">
+                                        <span class="blog-date">Upcoming</span>
+                                    </div>
+                                    <div class="trip-content">
+                                        <h4><a href="">Goechala Trek</a></h4>
+                                        <div class="trip-text">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed.</p>
+                                        </div>
+                                        <div class="trip-bottom">
+                                            <ul class="trip-meta-list">
+                                                <li><i class="bx bx-time-five"></i>9 Nights 10 Days</li>
+                                                @* <li><i class="bx bx-time-five"></i>05 Hours</li> *@
+                                            </ul>
+                                            <a href="" class="explore-btn">Explorer Now<i class="bi bi-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
                 <div class="col-lg-5 col-md-10 d-flex justify-content-lg-end justify-content-center">
                     @* <div class="video-wrapper">
                         <div class="video-play">
@@ -365,7 +399,7 @@
                         <div class="blog-single2">
                             <div class="image">
                                 <img src="@Url.Action("Image","TourImage",new{imageId=item.M20_ImageId})" class="img-fluid" alt="image">
-                                <span class="blog-category">Treks</span>
+                                <span class="blog-category">EXPEDITIONS</span>
                             </div>
                             <div class="content py-4">
                                 <h5><a href="">@item.TourName</a></h5>
