@@ -53,7 +53,7 @@
                     <div class="destination-single1">
                         <img src="@Url.Action("image","Location",new{locationId=item.LocationId})" class="destination-img img-fluid" alt="image">
                             <div class="content content_">
-                            <p class="text-light"><i class="fas fa-map-marker-alt"></i> @item.Altitude Feet</p>
+                            @* <p class="text-light"><i class="fas fa-map-marker-alt"></i> @item.Altitude Feet</p>s *@
                             <div class="text-wrap">
                                 <h4><a href="@Url.Action("DetailsPage","LocationDetails",new{locationId=item.LocationId})">@item.Location</a></h4>
                                 <p class="text-light">@item.Caption</p>

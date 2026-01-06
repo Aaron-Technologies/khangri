@@ -258,7 +258,8 @@
                         <div class="swiper-wrapper">
 
                             @{
-	                            foreach(var item in Model.Tours.OrderBy(s => s.TourId).Take(3))
+	                            @* foreach(var item in Model.Tours.OrderBy(s => s.TourId).Take(3)) *@
+                                foreach(var item in Model.Tours.Where(s => s.TourTypeId == 4).Take(3))
 	                            {
 
                                     <div class="swiper-slide">
@@ -314,7 +315,7 @@
                     </div>
 
                     <div class="text-center mt-5">
-                        <a href="@Url.Action("list","TourDetails")" class="a-btn">All Trekkings</a>
+                        <a href="@Url.Action("list","TrekDetails",new{tourId=0,tourTypeId=4})" class="a-btn">All Trekkings</a>
                     </div>
                 </div>
             </div>
@@ -393,7 +394,7 @@
             <div class="row g-4 justify-content-center">
 
                 @{
-				    foreach(var item in Model.Tours.Where(s => s.TourTypeId == 4).Take(3))
+				    foreach(var item in Model.Tours.Where(s => s.TourTypeId == 2).Take(3))
 				    {
                         <div class="col-lg-4 col-md-6 col-sm-10">
                         <div class="blog-single2">
@@ -421,7 +422,7 @@
             </div>
 
             <div class="text-center mt-5">
-                <a href="@Url.Action("list","TrekDetails")" class="a-btn">All EXPEDITIONS</a>
+                <a href="@Url.Action("list","TourDetails",new{tourId=0,tourTypeId=2})" class="a-btn">All EXPEDITIONS</a>
             </div>
         </div>
     </div>
@@ -464,7 +465,3 @@
     </div> -->
 
    
-
-   
-   
-
