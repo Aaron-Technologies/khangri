@@ -128,20 +128,21 @@
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("","")">Upcoming</a>
+                        <a href="@Url.Action("Gallery","Home")">Upcoming</a>
                     </li>
 
                     <li class="menu-item-has-children">
-                        <a href="@Url.Action("Accomodation","Home")">Accomodations</a>          
+                        <a href="@Url.Action("Accomodation","Home")">Accomodations</a>
                     </li>
-                    
+
                     <li class="menu-item-has-children">
                         <a href="@Url.Action("Gallery","Home")">Gallery</a>
                     </li>
-                    
+
                     <li class="menu-item-has-children">
                         <a href="@Url.Action("About","Home")">About</a>
                     </li>
+
                     <li><a href="@Url.Action("","")">Blog</a></li>
                 </ul>
 
@@ -406,6 +407,6 @@
   <script src="~/assets/js/isotope.pkgd.min.js"></script>
   <script src="~/assets/js/main.js"></script>
 
-	@await RenderSectionAsync("Scripts", required: false)
+ @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
