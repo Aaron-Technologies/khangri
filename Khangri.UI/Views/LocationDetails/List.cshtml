@@ -9,6 +9,11 @@
 
 @section styles{
     <style>
+        .destination-single1{
+            background-size: cover;
+            background-position: center;
+            height: 210px;
+        }
         .destination-img{
             min-height: 210px;
             max-height: 210px;
@@ -50,8 +55,8 @@
 				{
 
                 <div class="col-md-3">
-                    <div class="destination-single1">
-                        <img src="@Url.Action("image","Location",new{locationId=item.LocationId})" class="destination-img img-fluid" alt="image">
+                    <div class="destination-single1" style="background-image: url('@Url.Action("image","Location",new{locationId=item.LocationId})')">
+                        @* <img src="@Url.Action("image","Location",new{locationId=item.LocationId})" class="destination-img img-fluid" alt="image"> *@
                             <div class="content content_">
                             @* <p class="text-light"><i class="fas fa-map-marker-alt"></i> @item.Altitude Feet</p>s *@
                             <div class="text-wrap">
